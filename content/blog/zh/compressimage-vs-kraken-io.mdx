@@ -1,0 +1,119 @@
+---
+title: "CompressImage 与 Kraken.io 对比：本地隐私还是云端自动化？"
+description: "从隐私安全、批量流程、自动化能力到收费模式，全面比较 CompressImage 与 Kraken.io，帮你挑选合适的图片压缩方案。"
+translationKey: "comparison-kraken"
+date: "2025-10-19"
+author: CompressImage 团队
+readTime: 10 分钟阅读
+category: 对比
+tags:
+  - 对比
+  - kraken
+  - 自动化
+  - API
+image: "/branding/og-default.png"
+tldr: "CompressImage 强调 100% 本地处理、无限批量和可分享报表；Kraken.io 具备成熟的 API、CDN 和 WordPress 插件，但需要上传文件并消耗额度。"
+draft: true
+---
+
+## TL;DR
+
+| 问题 | CompressImage | Kraken.io |
+| --- | --- | --- |
+| 处理方式 | 本地（浏览器/PWA/桌面壳） | 云端 API + 网页界面 |
+| 隐私 | 文件不上传，全部留在设备 | 图片需上传至 Kraken.io 服务器 |
+| 批量能力 | 队列无限、单文件预设、JSON/CSV 日志 | 按额度计费，免费用户单文件 ≤1 MB，批量走 API |
+| 支持格式 | JPEG、PNG、WebP、AVIF、GIF | JPEG、PNG、GIF、WebP、SVG、AVIF、HEIC、PDF |
+| 自动化 | CLI & GitHub Action 内测、API 规划 | 成熟 REST API、URL 拉取、WordPress/Shopify 插件 |
+| 收费 | 本地压缩无限，付费解锁协作/自动化 | Starter $5/月（500 MB）起，提供 Pro/企业方案 |
+
+Kraken.io 非常适合已经在云端布署、需要 CDN 或 URL 拉取的团队；而 CompressImage 在上线前的保密、QA、批量流程方面更轻量、无需额度焦虑。
+
+---
+
+## 1. 产品定位与核心差异
+
+Kraken.io 面向开发者与代理商，提供 API、URL 拉取、CDN 缓存，方便在网站或应用上线后自动优化图片。
+
+CompressImage 聚焦上线前的“人工验收”阶段：设计、市场、增长团队可以在内部完成压缩、对比、导出报表，再交给开发或发布系统，确保未发布的素材安全可控。
+
+### 功能速览
+
+| 能力 | CompressImage | Kraken.io |
+| --- | --- | --- |
+| 处理位置 | 本地 WebAssembly（无上传） | Kraken.io 云端服务器（欧盟/美国） |
+| 批量规模 | 队列无限，可拖拽文件夹（桌面壳） | 受额度限制；大批量需走 API 或 ZIP 上传 |
+| 质量校验 | 内建前后对比滑杆、放大检查、压缩日志 | 需下载或在上线站点查看 |
+| 高级格式 | AVIF、WebP、GIF、JPEG、PNG | 额外支持 SVG、HEIC、PDF 转换（API） |
+| 自动化 | CLI 内测、GitHub Action、REST API 路线图 | REST API、URL 拉取、Webhook、插件生态 |
+| 离线能力 | 支持离线队列、PWA/桌面壳 | 必须联网上传 |
+
+如果你的工作流是在 S3/源站上统一处理图片，Kraken.io 的 API/CDN 是高效方案；若你需要在素材上线前人工核查、保密，CompressImage 的本地化流程更安全。
+
+## 2. 实测表现（模板数据，可用脚本更新）
+
+测试设置：CompressImage 使用 AUTO + 质量 75，Kraken 网页使用 “Lossy” 自动模式。下列数据为示例，后续可导入 CSV 后换成最新结果。
+
+| 测试素材 | 原始体积 | CompressImage | Kraken.io | 备注 |
+| --- | --- | --- | --- | --- |
+| 生活方式摄影 JPG | 4.02 MB | **1.05 MB**（-74%） | 1.01 MB（-75%） | Kraken 略小，CompressImage 自动移除 EXIF |
+| SaaS 仪表盘截图 PNG | 1.31 MB | **340 KB**（-74%） | 352 KB（-73%） | 两者都保留 UI 清晰度，Kraken 支持 PNG→JPEG 转换 |
+| 透明插画 PNG | 823 KB | 212 KB（-74%） | **188 KB**（-77%） | Kraken 压缩更激进，需留意渐变色带 |
+
+CompressImage 先在本地预览，再决定是否下载；Kraken 必须下载或上线后查看来验证效果。
+
+## 3. 工作流与自动化
+
+| 场景需求 | CompressImage | Kraken.io |
+| --- | --- | --- |
+| **上线前 QA** | 本地队列 + 滑杆比对，可导出日志给同事 | 需手动下载或在测试站确认 |
+| **批量模板** | 保存预设、单文件覆盖、导出 JSON/CSV | API 支持预设，网页端功能有限 |
+| **持续集成** | CLI (`compressimage-cli`) + GitHub Action 内测 | REST API、URL 拉取、Webhook、官方集成 |
+| **CMS 集成** | 导出压缩包交给任意 CMS，WP 插件开发中 | WordPress、Magento、Shopify 插件，Kraken CDN |
+| **团队协作** | 压缩报告、计划中的共享工作区 | 团队账户、额度报表管理 |
+
+Kraken.io 适合“上线后自动跑”的模式；CompressImage 则在人工质检、跨团队交接时更顺畅。
+
+## 4. 收费模式
+
+| 方案 | CompressImage | Kraken.io |
+| --- | --- | --- |
+| 免费 | 本地压缩不限张数、功能齐全 | 免费 100 MB，单文件 ≤1 MB |
+| 付费 | 以协作、自动化、团队管理为核心（$9/人/月规划中） | Starter $5/月（500 MB）、Advanced $9/月（2 GB）、Pro/Enterprise | 
+| 企业 | 定制 API、SLA、私有部署 | 提供企业版、私有部署、白标方案 |
+
+CompressImage 无需担心额度，付费点集中在协作、审计、自动化；Kraken.io 的价值在于帮你省下服务器资源、提供 API/CDN 服务。
+
+## 5. 怎样选择？
+
+**更适合 CompressImage 的情况：**
+
+- 素材高度保密，不能上传第三方服务器。
+- 需要无限批量、可复用预设、下载日志的 QA 流程。
+- 准备把压缩动作纳入 Git、CI/CD 或设计质检，而不想逐条扣额度。
+- 经常在弱网或外出环境工作，需要离线压缩能力。
+
+**更适合 Kraken.io 的情况：**
+
+- 网站已部署在云端，想要自动化图片优化 + CDN 加速。
+- 希望直接从 S3/源站拉取图片处理，再回写到站点。
+- 管理多个 CMS（WordPress、Magento、Shopify）并依赖其插件。
+- 接受按流量/额度付费，享受托管化服务。
+
+## 6. 快速体验 CompressImage
+
+1. 访问 [www.compressimage.dev](https://www.compressimage.dev/)，可安装 PWA 方便离线工作。  
+2. 拖入测试素材，使用前后对比滑杆确认关键细节。  
+3. 保存预设、批量压缩并导出 ZIP + JSON 报告交给开发/运营。  
+4. 加入 [CLI/GitHub Action 内测](mailto:hello@compressimage.dev?subject=CLI%20beta)，把压缩接入自动化流程。  
+5. 想统一团队流程？[申请共享空间/WordPress 插件候补](mailto:hello@compressimage.dev?subject=WP%20plugin%20waitlist)。
+
+> 想拿到本文的测试素材和压缩日志？[发送邮件索取数据包](mailto:hello@compressimage.dev?subject=Kraken%20comparison%20data)。
+
+---
+
+### 下一步
+
+- 立即体验 CompressImage：[www.compressimage.dev](https://www.compressimage.dev/)  
+- 订阅自动化路线图更新：[加入邮件列表](mailto:hello@compressimage.dev?subject=Join%20automation%20updates)  
+- 查看其他对标文章（TinyPNG、ShortPixel 等），完善你的选型矩阵。  

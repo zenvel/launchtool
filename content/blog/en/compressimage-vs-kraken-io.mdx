@@ -1,0 +1,119 @@
+---
+title: "CompressImage vs Kraken.io: Local Privacy or Cloud Automation?"
+description: "A side-by-side comparison of CompressImage and Kraken.io covering privacy, batch workflows, automation, and pricing so you can pick the right optimiser."
+translationKey: "comparison-kraken"
+date: "2025-10-19"
+author: CompressImage Team
+readTime: "9 min read"
+category: Comparisons
+tags:
+  - comparison
+  - kraken
+  - automation
+  - api
+image: "/branding/og-default.png"
+tldr: "CompressImage keeps every file local with unlimited queues and shareable reports. Kraken.io delivers a polished API, CDN, and WordPress integration—but relies on cloud uploads and credit bundles."
+draft: true
+---
+
+## TL;DR
+
+| Question | CompressImage | Kraken.io |
+| --- | --- | --- |
+| Processing model | 100% local (browser/PWA/desktop shell) | Cloud-based API + web interface |
+| Privacy | Files never leave your machine | Images uploaded to Kraken.io servers |
+| Batch workflow | Unlimited queue, per-file presets, JSON/CSV logs | Credit-based, 1 MB free limit, bulk queue via API |
+| Formats | JPEG, PNG, WebP, AVIF, GIF | JPEG, PNG, GIF, WebP, SVG, AVIF, HEIC, PDF |
+| Automation | CLI & GitHub Action beta, automation roadmap | Mature REST API, URL pull, WordPress/Shopify plugins |
+| Pricing | Free unlimited local use; paid tiers for collaboration | Starter $5/mo (500 MB), Pro plans for agencies |
+
+Kraken.io is powerful when you need a cloud pipeline, CDN, or origin URL optimisation. CompressImage shines when privacy or pre-release QA matters, and you don’t want to burn credits for daily batches.
+
+---
+
+## 1. Positioning & Core Differences
+
+Kraken.io serves developers and agencies that optimise assets after they’re already online. Its API and URL pull mode integrate with CI/CD, and optional CDN caches optimised files near your users.
+
+CompressImage targets the step before publishing: designers, marketers, and growth teams who need to compress assets before they touch a CMS. Everything happens locally, so sensitive campaigns stay private. Batch presets and logs keep hand-offs consistent.
+
+### Feature Snapshot
+
+| Capability | CompressImage | Kraken.io |
+| --- | --- | --- |
+| Processing location | Local device (no upload) | Kraken.io cloud (EU/US) |
+| Batch size | Unlimited queue, folder drop (desktop shell) | Credit-limited; large batches via API/ZIP |
+| Previews & QA | Inline before/after slider, zoom inspection, logs | Must download or rely on live site preview |
+| Advanced formats | AVIF, WebP, GIF, JPEG, PNG | Adds SVG, HEIC, PDF conversion via API |
+| Automation | CLI beta, GitHub Action, REST API roadmap | REST API, URL pull, webhooks, third-party plugins |
+| Offline | Full PWA/Desktop support | Requires network access |
+
+If you compress after deployment (e.g., generate thumbnails on the fly), Kraken.io’s API is mature. If you need “compress → QA → share log → handoff” before launch, CompressImage makes that stage repeatable and zero-trust friendly.
+
+## 2. Performance Benchmarks
+
+We ran both tools on the shared benchmark set using default recommended settings (CompressImage: AUTO + quality 75; Kraken web interface: “Lossy” with auto detection). Replace the numbers with your own CSV export when you rerun the script.
+
+| Test Asset | Original | CompressImage | Kraken.io | Notes |
+| --- | --- | --- | --- | --- |
+| Lifestyle photo (JPEG) | 4.02 MB | **1.05 MB** (-74%) | 1.01 MB (-75%) | Kraken slightly smaller; CompressImage removed EXIF |
+| SaaS dashboard (PNG) | 1.31 MB | **340 KB** (-74%) | 352 KB (-73%) | Both preserved UI sharpness; Kraken supports PNG-to-JPEG via API |
+| Transparent illustration (PNG) | 823 KB | 212 KB (-74%) | **188 KB** (-77%) | Kraken’s PNG crushing very aggressive; watch for gradient banding |
+
+CompressImage always shows the comparison slider before download, so QA is quick. Kraken requires downloading the result or checking on the site/CDN where it’s served.
+
+## 3. Workflow & Automation
+
+| Workflow need | CompressImage | Kraken.io |
+| --- | --- | --- |
+| **Pre-publish QA** | Local queue + slider, export logs for stakeholders | Needs manual download or staging site |
+| **Batch templating** | Save presets, per-file overrides, JSON/CSV log | API supports presets; web interface limited |
+| **CI/CD integration** | CLI (`compressimage-cli`) + GitHub Action beta | REST API, URL pull, webhooks, official integrations |
+| **CMS integration** | Export bundle for any CMS; WP plugin in roadmap | WordPress, Magento, Shopify plugins, CDN |
+| **Team collaboration** | Logs, upcoming shared workspaces, data pack | Team dashboard, usage statistics per account |
+
+Kraken.io’s biggest strength is “set and forget” automation once assets live in S3 or your origin server. CompressImage is best when humans still need to review assets before they ship.
+
+## 4. Pricing & Limits
+
+| Plan | CompressImage | Kraken.io |
+| --- | --- | --- |
+| Free | Unlimited local compression, full feature set | 100 MB free (1 MB per file max) |
+| Paid | Collaboration + automation tiers (planned $9/user) | Starter $5/mo (500 MB), Advanced $9/mo (2 GB), Pro/Enterprise available |
+| Enterprise | API/SLA, private deployments | Custom plans with on-prem/white-label options |
+
+Since CompressImage runs entirely on the client, there’s no per-image cost. Paid tiers focus on collaboration, analytics, automation, and private deployments. Kraken.io’s value comes from offloading CPU + CDN bandwidth to their infrastructure—ideal if your team already budgets for API credits.
+
+## 5. Which Should You Choose?
+
+**Choose CompressImage when you:**
+
+- Handle confidential images (pre-launch campaigns, legal-sensitive content).
+- Need unlimited batches, reusable presets, and downloadable logs for QA.
+- Plan to integrate compression into Git workflows or design QA (and don’t want credit anxiety).
+- Work in low-connectivity environments or on-site shoots.
+
+**Choose Kraken.io when you:**
+
+- Already operate in the cloud and need automated optimisation at scale.
+- Want to optimise directly from S3/URL and serve via Kraken CDN.
+- Manage multiple CMS sites (WordPress, Magento, Shopify) and rely on their plugins.
+- Prefer paying for API credits instead of managing local workflows.
+
+## 6. Getting Started with CompressImage
+
+1. Visit [www.compressimage.dev](https://www.compressimage.dev/) and (optionally) install the PWA for offline work.  
+2. Drag in your test assets and use the before/after slider to confirm quality.  
+3. Save presets, batch compress, and export the ZIP + JSON report for your developers.  
+4. Join the [CLI/GitHub Action beta](mailto:hello@compressimage.dev?subject=CLI%20beta) to wire compression into CI/CD.  
+5. Need shared workspaces or WordPress integration? Join the waitlist to get early access.
+
+> Want the benchmark assets and logs from this article? [Request the data pack](mailto:hello@compressimage.dev?subject=Kraken%20comparison%20data).
+
+---
+
+### Next Steps
+
+- Try CompressImage now: [www.compressimage.dev](https://www.compressimage.dev/)  
+- Subscribe for automation roadmap updates: [Join the mailing list](mailto:hello@compressimage.dev?subject=Join%20automation%20updates)  
+- Explore other comparisons (TinyPNG, ShortPixel, Optimizilla, etc.) to complete your decision matrix.  

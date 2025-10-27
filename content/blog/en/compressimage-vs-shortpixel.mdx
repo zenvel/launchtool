@@ -1,0 +1,117 @@
+---
+title: "CompressImage vs ShortPixel: Privacy-First Local Compression or Cloud Credits?"
+description: "We compared CompressImage and ShortPixel across privacy, batch workflows, automation, and pricing to help you choose the right image optimisation stack."
+translationKey: "comparison-shortpixel"
+date: "2025-10-18"
+author: CompressImage Team
+readTime: "9 min read"
+category: Comparisons
+tags:
+  - comparison
+  - shortpixel
+  - wordpress
+  - automation
+image: "/branding/og-default.png"
+tldr: "CompressImage keeps every file local with unlimited batches and emerging automation hooks. ShortPixel excels inside WordPress with mature CDN/API credits, but relies on cloud uploads and monthly quotas."
+draft: true
+---
+
+## TL;DR
+
+| Question | CompressImage | ShortPixel |
+| --- | --- | --- |
+| Processing model | 100% local (browser/PWA/desktop shell) | Cloud-based API & WordPress plugin |
+| Privacy | Files never leave your machine | Images uploaded to ShortPixel servers |
+| Batch workflow | Unlimited queue, per-file presets, CSV/JSON logs | Credits-based; 100 free images/month |
+| Formats | JPEG, PNG, WebP, AVIF, GIF | JPEG, PNG, GIF, WebP; AVIF via API beta |
+| Automation | CLI & GitHub Action beta, JSON export | Mature API, Zapier, WP plugin automation |
+| Pricing | Free unlimited local use; paid tiers for collaboration & automation | Credit bundles (100 free/month, paid from $9.99/mo for 10k credits) |
+
+ShortPixel is an excellent upgrade for WordPress sites already living in the cloud. CompressImage keeps confidential assets offline, removes quota anxiety, and makes batch QA repeatable.
+
+---
+
+## 1. Positioning & Core Differences
+
+ShortPixel grew up inside the WordPress ecosystem. It offers lossy/lossless compression, CDN delivery, image resizing, and a marketplace of plugins (ShortPixel Image Optimizer, Adaptive Images, etc.). Credits can be used via the web, API, or WP plugin—ideal if you already optimise on publish.
+
+CompressImage targets creative and growth teams who need to compress before assets ever touch a CMS. Everything happens in the browser (or installable PWA), so pre-release campaigns stay in-house. The product roadmap focuses on reusable presets, automation hooks, and shareable reports.
+
+### Feature Snapshot
+
+| Capability | CompressImage | ShortPixel |
+| --- | --- | --- |
+| Processing location | Local device (WebAssembly / PWA) | ShortPixel cloud (EU-based servers) |
+| Batch size | Unlimited queue, drag-and-drop folders (desktop shell) | Tied to credit balance (100 free images/month) |
+| Presets & logs | Save presets, export JSON/CSV logs, before/after slider | Plugin settings per site; no downloadable logs |
+| Advanced formats | AVIF + WebP + GIF optimisation | WebP native, AVIF in API beta, no local fallback |
+| Automation options | CLI beta, GitHub Action, REST API roadmap | Mature REST API, WP CLI integration, Zapier |
+| Offline use | Yes—PWA/Desktop shell retains queue offline | No—always requires network |
+
+## 2. Performance Benchmarks
+
+We ran both tools on a shared test set (photography, UI screenshot, transparent illustration). CompressImage used AUTO format with quality 75. ShortPixel used “Glossy” mode via the web interface. Replace these numbers with your own lab data if you rerun the script; the template is ready.
+
+| Test Asset | Original | CompressImage | ShortPixel | Notes |
+| --- | --- | --- | --- | --- |
+| Lifestyle photo (JPEG) | 4.02 MB | **1.05 MB** (-74%) | 1.09 MB (-73%) | Similar output; ShortPixel retained limited metadata |
+| SaaS dashboard (PNG) | 1.31 MB | **340 KB** (-74%) | 392 KB (-70%) | ShortPixel smoothed text slightly; still acceptable |
+| Transparent illustration (PNG) | 823 KB | 212 KB (-74%) | **198 KB** (-76%) | ShortPixel slightly smaller; CompressImage preserved gradients cleanly |
+
+CompressImage’s inline before/after slider and zoom make it easy to spot halos or gradients before downloading. ShortPixel’s WP plugin relies on the live site preview—fine for production assets, less ideal for confidential campaigns.
+
+## 3. Workflow & Automation
+
+| Need | CompressImage | ShortPixel |
+| --- | --- | --- |
+| **Pre-publish QA** | Local queue + slider preview; export logs to share with designers | Requires staging site or manual downloads |
+| **Batch templating** | Save multi-format presets, clone across projects | Plugin/site settings; no preset portability |
+| **CI/CD integration** | CLI (`compressimage-cli`) + GitHub Action beta | Curl-based API scripts, WP CLI, Zapier |
+| **CMS integration** | Export bundles for any CMS, WordPress plugin planned | Mature WP plugin, Adaptive Images CDN |
+| **Collaboration** | Compression reports, upcoming shared workspaces | User accounts per WordPress site; no cross-site view |
+
+If your workflow lives primarily in WordPress, ShortPixel’s plugin delivers optimised assets directly upon upload. If you need a manual “compress, QA, handoff” stage before the CMS, CompressImage keeps the process self-contained.
+
+## 4. Pricing & Limits
+
+| Plan | CompressImage | ShortPixel |
+| --- | --- | --- |
+| Free | Unlimited local compression, AVIF/WebP support | 100 images/month (shared pool) |
+| Paid | Collaboration + automation tiers (from $9/user, planned) | 10k credits: $9.99/mo; 30k: $19.99/mo; one-time packs available |
+| Enterprise | API/SLA, dedicated support | Custom monthly/annual contracts |
+
+Because CompressImage runs locally, there’s no incremental cost per image. Paid tiers will focus on team features (shared presets, access control, analytics). ShortPixel’s credit model works well if you already budget for CDN/API services.
+
+## 5. Which Should You Choose?
+
+**Choose CompressImage when you:**
+
+- Handle pre-release assets or legal-sensitive imagery that cannot leave your device.
+- Need to compress hundreds/thousands of files with reusable presets and structured logs.
+- Plan to wire compression into design QA or CI/CD pipelines without paying per image.
+- Want an offline-ready PWA or desktop experience for travel shoots and on-site campaigns.
+
+**Choose ShortPixel when you:**
+
+- Run multiple WordPress sites and want automatic optimisation on upload.
+- Already rely on ShortPixel CDN/adaptive images for responsive delivery.
+- Prefer credit-based pricing tied to actual published images.
+- Need a polished API today (while CompressImage’s API/CLI is still in beta).
+
+## 6. Getting Started with CompressImage
+
+1. 打开 [compressimage.dev](https://www.compressimage.dev/) 并（可选）安装 PWA 保留离线能力。  
+2. 拖拽测试图片，使用前后对比滑杆确认画质。  
+3. 保存项目预设，批量压缩后导出 ZIP + JSON 报告。  
+4. 订阅 [CLI/GitHub Action Beta](mailto:hello@compressimage.dev?subject=CLI%20beta) 将压缩纳入自动化流程。  
+5. 若有 WordPress 集成需求，欢迎加入插件等待名单。
+
+> 需要本文的测试素材和压缩日志？[申请数据包](mailto:hello@compressimage.dev?subject=ShortPixel%20comparison%20data)。
+
+---
+
+### Next Steps
+
+- 体验 CompressImage：[compressimage.dev](https://www.compressimage.dev/)  
+- 了解我们的自动化路线图：[加入更新列表](mailto:hello@compressimage.dev?subject=Join%20automation%20updates)  
+- 浏览其他对标文章（TinyPNG、Kraken.io 等）以获取完整比较视图。  

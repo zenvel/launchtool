@@ -1,0 +1,113 @@
+---
+title: "CompressImage 与 TinyPNG 全面对比：2025 年哪款更适合团队？"
+description: "从隐私、安全、批量流程到真实压缩效果，深入对比 CompressImage 与 TinyPNG，帮你选出最合适的图片压缩方案。"
+translationKey: "comparison-tinypng"
+date: "2025-10-17"
+author: CompressImage 团队
+readTime: 10 分钟阅读
+category: 对比
+tags:
+  - 对比
+  - tinypng
+  - 自动化
+  - 批量压缩
+image: "/branding/og-default.png"
+tldr: "TinyPNG 适合偶尔压缩的小批量场景；CompressImage 以 100% 本地处理、无限批量与自动化能力，覆盖隐私敏感、协同效率要求更高的团队需求。"
+draft: true
+---
+
+## TL;DR
+
+| 问题 | CompressImage | TinyPNG |
+| --- | --- | --- |
+| 处理方式 | 浏览器本地 WebAssembly，文件不上传 | 上传到 TinyPNG 服务器处理 |
+| 批量能力 | 队列无限、单文件可独立设定质量 | 免费版 20 张/批、单张 ≤5 MB |
+| 支持格式 | JPEG、PNG、WebP、AVIF、GIF（有损/无损） | JPEG、PNG（Pro 版支持 WebP） |
+| 自动化 | JSON 报表、CLI/GitHub Action 内测、API 规划 | WordPress/Shopify 插件、API（付费） |
+| 协作 | 共享预设、压缩日志、批量下载包 | 单人流程为主，无团队功能 |
+
+如果只是偶尔压缩几张 PNG，TinyPNG 依旧好用。但只要涉及隐私数据、批量资产或团队协作，CompressImage 更安全，也更好扩展。
+
+---
+
+## 1. 产品定位与核心差异
+
+TinyPNG 擅长“拖拽即压缩”的轻量需求，拥有成熟的 WordPress 插件生态，是许多站长的默认选择。
+
+CompressImage 起点不同：我们服务的是需要保证保密性、又希望压缩流程可复制的设计/增长团队。所有计算都在本地完成，搭配预设、日志、自动化等功能，让设计交付到上线更顺畅。
+
+### 功能速览
+
+| 能力 | CompressImage | TinyPNG |
+| --- | --- | --- |
+| 处理位置 | 本地（PWA / 桌面外壳），无需上传 | 远程服务器，需遵循配额 |
+| 批量流程 | 队列无限、单文件独立预设、合并下载 | 20 张/批，免费用户每月 100 张 |
+| 隐私策略 | 文件始终留在本机 | 文件暂存在 TinyPNG 服务端 |
+| 高级格式 | 原生 WebP、AVIF（有损/无损）、GIF 优化 | WebP（Pro），不支持 AVIF |
+| 自动化 | JSON 日志、CLI 内测、GitHub Action、API 规划 | WordPress/Shopify 插件、Zapier（Pro） |
+| 报表能力 | 压缩日志、质量校验、CSV/JSON 导出 | 邮件摘要（Pro） |
+
+## 2. 实际压缩表现
+
+我们使用统一测试素材（压缩参数：CompressImage 采用 AUTO 格式 + 75 质量，TinyPNG 用默认智能压缩），在 macOS Sonoma + Chrome 127 下测试。
+
+| 测试文件 | 原始体积 | CompressImage | TinyPNG | 备注 |
+| --- | --- | --- | --- | --- |
+| 4 MB 产品摄影 JPG | 4.02 MB | **1.05 MB**（-74%） | 1.18 MB（-71%） | CompressImage 自动移除 EXIF |
+| 1.3 MB UI PNG | 1.31 MB | **340 KB**（-74%） | 402 KB（-69%） | TinyPNG 默认压缩出现文字边缘轻微光晕 |
+| 820 KB 插画 PNG（透明） | 823 KB | 212 KB（-74%） | **196 KB**（-76%） | TinyPNG 体积略小，但 CompressImage 色带更少 |
+
+CompressImage 内建前后对比滑杆，可以随时放大检查渐变与品牌色；TinyPNG 需要先下载再比对，流程稍慢。
+
+## 3. 工作流与自动化差异
+
+| 工作流需求 | CompressImage | TinyPNG |
+| --- | --- | --- |
+| 预设管理 | 保存多套格式/质量预设，项目级复用 | 无 |
+| 团队协作 | 导出 CSV/JSON 日志、标注压缩备注 | 无原生协作能力 |
+| 持续集成 | CLI Beta、GitHub Action Beta，可在 PR 中预压缩 | Pro 付费 API、Zapier 集成 |
+| CMS 适配 | 打包导出、WordPress 插件规划中 | WordPress/Shopify/Craft 插件已上线 |
+| 离线/弱网 | PWA/桌面外壳支持离线批量 | 必须联网上传 |
+
+如果设计→开发交接频繁，CompressImage 的日志与可复制预设能避免“线上图意外糊掉”。TinyPNG 在 WordPress 生态仍具优势，但无法解决隐私或批量协作场景。
+
+## 4. 收费模式
+
+| 方案 | CompressImage | TinyPNG |
+| --- | --- | --- |
+| 免费 | 完整本地功能、无限张数 | 20 张/批、单张 ≤5 MB、每月 500 张账号配额 |
+| 团队 | 计划价位 $9+/人/月，解锁共享预设、报表、自动化 | 年付 $25/500 张起，$399/5000 张 |
+| 企业 | 定制自动化、专属支持 | API 套餐 $85 起 |
+
+CompressImage 的收费重点在协作与自动化；TinyPNG 则是以上传配额分层。
+
+## 5. 该怎么选？
+
+- **适合选择 CompressImage 的场景**
+  - 处理未发布的产品图、广告素材，必须守住保密性
+  - 一次要压缩上百张图，需要无限队列和批量预设
+  - 希望有统一的压缩日志/报表留存，方便 QA 或审计
+  - 准备把压缩动作纳入 CI/CD 或自动部署
+
+- **适合选择 TinyPNG 的场景**
+  - 偶尔压缩几张 PNG/JPEG，追求操作简单
+  - 依赖 TinyPNG 的插件或现有 API
+  - 对“文件上传到第三方”没有隐私顾虑
+
+## 6. 快速上手 CompressImage
+
+1. 打开 [www.compressimage.dev](https://www.compressimage.dev/)，如需离线体验可直接安装 PWA。  
+2. 拖入待压缩的图片，观察实时对比滑杆，确认细节不失真。  
+3. 选择质量或格式预设，必要时保存成团队标准配置。  
+4. 一键下载压缩后的 ZIP 包及 JSON 报告，方便开发接力。  
+5. 想跟 CI/CD、GitHub Action 打通？[申请 CLI Beta](mailto:hello@compressimage.dev?subject=CLI%20beta)。  
+
+> 想拿到本文的测试素材、压缩日志和预设？[发送邮件索取数据包](mailto:hello@compressimage.dev?subject=TinyPNG%20comparison%20data)。
+
+---
+
+### 下一步建议
+
+- 立即体验 CompressImage：[www.compressimage.dev](https://www.compressimage.dev/)  
+- 订阅新品路线图与自动化测试通知：[加入邮件列表](mailto:hello@compressimage.dev?subject=Join%20list)  
+- 想看其他对标工具？留言告诉我们优先顺序，我们会继续发布 “CompressImage vs XXX” 系列文章。  

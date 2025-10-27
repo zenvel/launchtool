@@ -1,0 +1,91 @@
+---
+title: "How to Compress Images in Krita Without Losing Detail"
+description: "Export smaller PNG, JPEG, and WebP files directly from Krita and keep your digital art crystal clear."
+translationKey: "how-to-compress-images-in-krita-without-losing-detail"
+date: "2025-11-18"
+author: "CompressImage Team"
+readTime: "7 min read"
+category: Tutorials
+tags:
+  - krita
+  - digital-art
+  - workflow
+image: "/branding/og-default.png"
+tldr: "Resize at export, use Krita’s WebP/JPEG quality sliders around 80, enable perceptual dithering, and consider a final pass in CompressImage to preview before/after results."
+draft: true
+faqs:
+  - question: "Does Krita support WebP export?"
+    answer: "Yes. Go to File → Export, choose WebP, then adjust quality and lossless options."
+  - question: "How do I keep gradients smooth when compressing?"
+    answer: "Use perceptual dithering (available in PNG/WebP dialogs) and avoid dropping quality below 75."
+  - question: "Should I compress inside Krita or use another tool?"
+    answer: "Do the first pass in Krita for layered files, then run a final check in CompressImage to preview side-by-side and generate responsive variants."
+---
+
+Krita excels at painting and illustration, but exporting lightweight assets is just as important—especially if you publish artwork on the web or ship sprites in games. Follow these steps to compress images in Krita without sacrificing your brushwork.
+
+## Step 1: Prep your canvas
+
+- **Flatten layers only if necessary**. Krita exports flattened images automatically, so you can keep the .kra file intact.
+- **Resize the canvas** to the final display dimensions (Image → Scale Image to New Size). Scaling down before export yields higher quality than resizing after.
+
+## Step 2: Export with the right settings
+
+Go to **File → Export** and pick the desired format.
+
+### For PNG (UI elements, transparency)
+- Set **Compression Level** to 6–8 (trade-off between speed and size).
+- Enable **Perceptual dithering** to avoid banding in gradients.
+- Consider **Indexed (palette) mode** for flat-color sprites (Image → Convert Image Type → Indexed).
+
+### For JPEG (photos, textured backgrounds)
+- Choose **JPEG** in the export dialog.
+- Set **Quality** between 75 and 85.
+- Turn on **Progressive** for faster perceived loading on the web.
+
+### For WebP (modern web output)
+- Select **WebP**.
+- Toggle **Lossless** for UI elements; otherwise use **Lossy** with Quality 75–80.
+- Check **Alpha compression** if you need transparency.
+
+### For GIF/Anim frames
+- Use **File → Export → GIF** only for short loops; otherwise export PNG/WebP sequences and assemble with external tools.
+
+## Step 3: Optional second pass in CompressImage
+
+Even with Krita’s controls, a final inspection helps you catch artifacts.
+
+1. Open [CompressImage](https://www.compressimage.dev/).
+2. Drag in the exported piece.
+3. Use the before/after slider to ensure details hold up at your target size.
+4. If needed, convert to AVIF/WebP or adjust quality for different resolutions.
+
+## Step 4: Automate sprites or batches
+
+- **Batch Mode**: Use Krita’s Batch Exporter (Tools → Scripts → Batch Exporter) to output multiple layers or animation frames, then run them through a compression script.
+- **Command-line**: Pair Krita with `kritarunner` for scripted exports, then pipe results to imageoptim-cli or CompressImage headless scripts.
+
+## Tips for keeping artwork crisp
+
+- Paint on higher resolution canvases, then scale down with Lanczos filtering (Krita’s default) to keep line art sharp.
+- Add a touch of noise to large gradients to mask banding before exporting JPEG/WebP.
+- Use separate export presets for web, print, and game builds so you don’t repeat settings from memory.
+
+## Troubleshooting
+
+| Issue | Fix |
+| --- | --- |
+| Banding after export | Enable dithering, raise quality, or add subtle noise layers |
+| File still huge | Reduce canvas dimensions, check for unused layers, try WebP | 
+| Colors shift on export | Convert document to sRGB before exporting |
+| Transparency edges look jagged | Export as PNG/WebP lossless, keep alpha straight |
+
+## Wrap-up
+
+Compressing images in Krita is straightforward once you understand the export dialogs. Combine Krita’s native controls with a quick pass through CompressImage and you’ll publish artwork that loads fast and still looks gallery-ready.
+
+---
+
+**Related Articles:**
+- [Reduce Image File Size for the Web: 8 Proven Techniques](/blog/reduce-image-file-size-for-the-web-8-proven-techniques)
+- [How to Compress an Image Without Losing Quality](/blog/how-to-compress-an-image-without-losing-quality)

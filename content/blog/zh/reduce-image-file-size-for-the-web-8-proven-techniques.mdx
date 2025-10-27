@@ -1,0 +1,112 @@
+---
+title: "如何为网站减小图片体积：8 个实用技巧"
+description: "八个即刻可用的图片优化方法，帮助你的网页在 2025 年实现 50%～90% 的体积削减。"
+translationKey: "reduce-image-file-size-for-the-web-8-proven-techniques"
+date: "2025-11-04"
+author: 图片压缩团队
+readTime: 10 分钟阅读
+category: 指南
+tags:
+  - 优化
+  - 工作流
+  - 最佳实践
+image: "/branding/og-default.png"
+tldr: "先调整尺寸，再转换为现代格式（WebP/AVIF），使用 CompressImage 等浏览器工具预览压缩效果，最后通过响应式加载与懒加载组合发布，轻松降低页面权重。"
+draft: true
+faqs:
+  - question: "怎样最快把图片体积减半？"
+    answer: "先把图片调整到实际展示尺寸，通常即可节省 40–60%；再转成 WebP 或 AVIF，整体压缩率轻松达到 70% 以上。"
+    href: "/zh/blog/how-to-compress-an-image-without-losing-quality"
+  - question: "应该手动压缩还是自动化？"
+    answer: "小批量时使用 CompressImage 等工具即可，需求增大后可在 CI 中集成 Sharp/Imagemin 或脚本化处理。"
+    href: "/zh/blog/image-compression-basics-formats-quality-and-browser-tools"
+  - question: "压缩会影响 SEO 吗？"
+    answer: "不会。保留描述性文件名、alt 文本和结构化数据引用即可。真正影响 SEO 的是加载速度。"
+---
+
+想要让页面立刻瘦身？下面这 8 个技巧是我们在营销站、SaaS 后台、内容型网站中反复验证过的组合。
+
+## 1. 压缩前先改尺寸
+
+将图片输出为实际需要的最大尺寸——英雄图 1600 像素、正文图 800 像素、缩略图 400 像素。先去掉多余像素再压缩，效率最高。
+
+## 2. 转换为现代编码格式
+
+- **照片/渐变** → WebP、AVIF
+- **UI + 透明背景** → PNG 或 WebP 无损
+- **图标** → SVG
+
+可以用设计工具自带导出，也可以直接丢进 CompressImage / Squoosh 实时转换。
+
+## 3. 使用合理的质量预设
+
+- WebP/JPEG 设为 70–80 最稳妥。
+- AVIF CRF 40–45 兼顾体积与画质。
+- 记录自己的预设，方便团队复用。
+
+## 4. 删除多余元数据
+
+EXIF 信息会额外占据几十 KB。CompressImage、Squoosh、ImageOptim 等工具可以自动删除 GPS、相机参数、缩略图，仅保留必要的数据。
+
+## 5. 借助浏览器端压缩工具
+
+浏览器工具快速、私密，还能即时检查细节。
+
+- **CompressImage**：批量拖拽、前后对比滑块、支持 WebP/AVIF/JPEG/PNG。
+- **Squoosh**：提供色度抽样等高级选项，适合单张精调。
+
+## 6. 使用响应式资源
+
+通过 `<picture>` 与 `srcset`，让移动端加载更小尺寸。
+
+```html
+<picture>
+  <source srcset="blog-hero.avif 1600w, blog-hero@2x.avif 2000w" type="image/avif" />
+  <source srcset="blog-hero.webp 1600w, blog-hero@2x.webp 2000w" type="image/webp" />
+  <img src="blog-hero.jpg" width="1600" height="900" loading="lazy" alt="Hero" />
+</picture>
+```
+
+## 7. 懒加载折叠以下图片
+
+为 `<img>` 添加 `loading="lazy"`，或使用 Intersection Observer 处理背景图。搭配模糊占位或纯色背景，避免布局跳动。
+
+## 8. 自动化重复流程
+
+图片数量上来后：
+
+- 在构建流程中使用 Sharp/Imagemin/Libvips。
+- 和 CMS 打通：新增素材时触发脚本调用 CompressImage 批量压缩。
+- 监测带宽和 Core Web Vitals 指标，用数据证明成效。
+
+## 额外提醒：缓存与 CDN 配置
+
+- 把图片放在 CDN 上，并设置 `cache-control: public, max-age=31536000`。
+- 使用带版本号的文件名（如 `hero.v2.webp`），便于更新。
+- 对 SVG、JSON 精灵表启用 Brotli/Gzip 压缩。
+
+## 审核清单
+
+- [ ] 英雄图 ≤ 250 KB（桌面）/ 150 KB（移动）
+- [ ] 内文插图 ≤ 100 KB
+- [ ] AVIF/WebP 搭配 JPEG 回退
+- [ ] 折叠以下图片均启用懒加载
+- [ ] Lighthouse “使用下一代格式” 检查通过
+- [ ] 结构化数据指向优化后的图片 URL
+
+## 推荐工具
+
+- [CompressImage](https://www.compressimage.dev/) —— 隐私优先、无限制的浏览器压缩工具。
+- [Squoosh](https://squoosh.app/) —— 适合单张精调的高级选项。
+- [ImageOptim](https://imageoptim.com/mac) —— macOS 平台批量清理元数据。
+- [Sharp](https://sharp.pixelplumbing.com/) —— Node.js 图像处理利器。
+
+## 总结
+
+图片优化并不存在“一招制胜”。叠加使用这 8 个方法——先调整尺寸、再换格式、压缩、响应式加载、懒加载，你的页面就能在保留视觉品质的同时保持轻盈。挑一个最重的页面，从这份清单开始执行吧。
+
+---
+
+**相关文章：**
+- [如何无损压缩图片](/zh/blog/how-to-compress-an-image-without-losing-quality)
+- [如何提升网页图片性能](/zh/blog/optimize-images-web-performance)

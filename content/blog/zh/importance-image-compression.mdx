@@ -1,0 +1,86 @@
+---
+title: 2025 年图片压缩的商业价值
+description: 了解为何图片压缩在 2025 年已成为排名、转化、成本与可持续指标的关键抓手，并学会量化收益。
+translationKey: importance-image-compression
+date: "2025-08-12"
+author: 图片压缩团队
+readTime: 8 分钟阅读
+category: 洞察
+tags:
+  - 性能
+  - SEO
+  - 成本节约
+  - 可持续
+image: "/branding/og-default.png"
+tldr: "2025 年的图片压缩是一项营收杠杆：它守住 Core Web Vitals，降低 CDN 支出，让品牌视觉更干净，还能减少碳排放负担。"
+faqs:
+  - question: "图片压缩在 2025 年如何影响 Core Web Vitals？"
+    answer: "减小图片体积可显著加速最大内容绘制（LCP）与交互到下一次绘制（INP），帮助页面稳定达成 2.5 秒 / 200 ms 的推荐值，也更容易出现在 Google AI Overview 中。"
+    href: "/zh/blog/how-to-compress-an-image-without-losing-quality"
+  - question: "团队应该采用怎样的压缩流程？"
+    answer: "遵循“调整尺寸 → 选格式 → 视觉校验”的无损流程，并在 CompressImage 中对比前后效果后再发布。我们的指南提供了具体预设。"
+    href: "/zh/blog/how-to-compress-an-image-without-losing-quality"
+  - question: "去哪能快速了解格式取舍？"
+    answer: "参考我们的格式指南，里面总结了 JPEG、PNG、WebP、AVIF 的优缺点及决策表，可直接分享给设计团队。"
+    href: "/zh/blog/image-formats-guide"
+---
+图片压缩早已不是“锦上添花”。到了 2025 年，它已经成为提升排名、增强留存、降低成本以及履行 ESG 责任的高性价比项目。下面我们用数据和实践说明为什么值得投入，并提供可落地的行动方案。
+
+## 2025 年的整体局势
+
+- **资产更重**：Retina 素材、产品截图、AI 生成图层出不穷，HTTP Archive 显示桌面端页面的图片中位体积已超过 1.2 MB（同比增加 8%）。
+- **排名信号更严**：Google 的 Search Generative Experience 更青睐 Core Web Vitals 达标的站点，LCP 不稳定很难在 AI Overview 中露面。
+- **移动优先仍是主旋律**：65% 的访问来自蜂窝网络，任何冗余字节都会放大缓慢体验。
+- **可持续 KPI**：越来越多团队需要向 ESG 利益相关者汇报数字碳足迹，图片减重是最好量化的成果之一。
+
+## SEO 与 Core Web Vitals
+
+- **最大内容绘制（LCP）**：约 70% 的页面以图片作为 LCP 元素，将 700 KB 的英雄图压至 200 KB 常能减少 400–600 ms 的 LCP 时间。
+- **交互到下一次绘制（INP）**：大体积图片解码会占用主线程，优化后可让 INP 稳定保持在 200 ms 以内。
+- **AI Overview 入选率**：Google 表示“快速、移动友好”的体验是引用页面的前提，图片压缩因此成了必修课。
+- **结构化数据协同**：压缩后的图片搭配 Article、FAQ 等 schema（正如 CompressImage 博客所做）更容易拿到丰富摘要。
+
+### 移动端仍是重点
+
+在移动网络上，每毫秒都更昂贵。优化英雄图片可减少 500 KB 以上的数据量，让中端 Android 设备也能迅速展示重点信息。
+
+## 超越排名：体验与品牌
+
+- **降低跳出率**：加载更快、视觉更清晰，用户更愿意停留。Shopify 报告显示，每减少 100 ms 加载时间，转化率平均提升 1%。
+- **品牌质感**：干净无噪点的视觉让产品更显专业，尤其适用于长内容或 SaaS 产品演示。
+- **可达性**：更小的文件对流量套餐有限或位于新兴市场的用户更友好。
+
+## 财务收益
+
+| 场景 | 月访问量 | 平均图片体积 → 优化后 | 每月节省的 CDN 流量 | 估算节约 |
+| --- | --- | --- | --- | --- |
+| 品牌营销站 | 100 万会话 | 1.8 MB → 900 KB | 900 GB | 约 ¥950 / 月 |
+| SaaS 产品后台 | 50 万会话 | 1.1 MB → 350 KB | 375 GB | 约 ¥500 / 月 |
+| 媒体门户 | 400 万会话 | 2.4 MB → 1.0 MB | 5.76 TB | 约 ¥6,000 / 月 |
+
+把节约额乘以 12 个月，很容易覆盖压缩工具和工程实施的投入。
+
+## 可持续指标
+
+根据 The Green Web Foundation，少传输 1 GB 数据可减少约 10 kg 二氧化碳当量。大型媒体站每月节约 5 TB 流量，一年即可减少约 600 kg 碳排放，足以写进 ESG 报告。
+
+## 2025 年的图片压缩计划
+
+1. **制定标准文档**：明确尺寸上限、推荐格式、目标体积，并共享给市场、产品与代理团队。
+2. **采用现代流程**：利用 CompressImage 调整尺寸、检查前后效果，再导出最优版本，全程在本地浏览器完成。
+3. **配置响应式资源**：通过 `srcset`/`sizes` 或 `picture` 为不同设备提供合适的图片。
+4. **定期审计**：使用 Lighthouse、WebPageTest、Web Vitals 扩展检查是否出现回退。
+5. **监控指标**：记录 LCP、INP、跳出率与 CDN 流量，在改动前后作对比。
+6. **按业务微调**：电商、媒体、SaaS 仪表盘的容忍度不同，为每类内容设定独立预设。
+
+## 结论与下一步
+
+把图片压缩当作持续性的、可量化的项目，而不是一次性的技术债清理。统一团队标准，配置好了像 CompressImage 这样的高效工具，在数据上追踪产出，页面会更快、品牌更出彩、预算也更轻松。
+
+**立刻尝试**：将一个英雄图拖进 [CompressImage](https://www.compressimage.dev/)，查看前后对比，然后把结果分享给团队，为后续优化铺路。
+
+---
+
+**相关文章：**
+- [理解图片格式：JPEG vs PNG vs WebP](/zh/blog/image-formats-guide)
+- [如何提升网页图片性能](/zh/blog/optimize-images-web-performance)

@@ -1,0 +1,99 @@
+---
+title: 如何优化网页图片性能
+description: 学会在不牺牲视觉质量的前提下压缩和分发图片，让网页在 2025 年依旧跑得飞快。
+translationKey: optimize-images-web-performance
+date: "2025-09-09"
+author: 图片压缩团队
+readTime: 10 分钟阅读
+category: 指南
+tags:
+  - 性能
+  - 网站
+  - 最佳实践
+image: "/branding/og-default.png"
+tldr: "先检查尺寸，再选择 WebP/AVIF 等现代格式，在 CompressImage 中带预览压缩，最后配置响应式与懒加载，就能兼顾画质与速度。"
+faqs:
+  - question: "压缩图片能带来多大的速度提升？"
+    answer: "通常能减少 50–80% 的图片体积，在移动网络上可直接缩短几秒加载时间，对 LCP 改善明显。"
+    href: "/zh/blog/how-to-compress-an-image-without-losing-quality"
+  - question: "WebP 一定比 JPEG 好吗？"
+    answer: "在大多数情况下 WebP 更小，但仍需为旧浏览器保留 JPEG 备份，并通过对比确认没有可见失真。"
+    href: "/zh/blog/image-formats-guide"
+  - question: "优化后应该关注哪些指标？"
+    answer: "重点观察最大内容绘制（LCP）、交互到下一次绘制（INP）和 CDN 流量开销，这些指标直接反映性能与成本收益。"
+    href: "/zh/blog/importance-image-compression"
+---
+
+在现代 Web 中，图片常常占据页面体积的大头。好消息是，只要遵循一套科学流程，就能让画面保持锐利的同时大幅减重。以下是 2025 年我们推荐的步骤。
+
+## 第 1 步：审视与调整尺寸
+
+- 输出英雄图时使用实际展示的最大宽度，例如 1600 像素，而不是直接上传 5000 像素原图。
+- 保持正确的宽高比，避免布局抖动。
+- 原始源文件单独保存，方便日后重新导出。
+
+## 第 2 步：挑选合适的格式
+
+不同格式适用于不同场景。照片与渐变图优先尝试 WebP 或 AVIF；UI 元素、图标、文字截图适合 PNG 或 WebP 无损。需要复习格式取舍时，参考我们的[图片格式指南](/zh/blog/image-formats-guide)。
+
+## 第 3 步：上传前压缩（必须看效果）
+
+1. 打开 [CompressImage](https://www.compressimage.dev/)。
+2. 拖入素材或点击 **选择图片**。
+3. 选择目标格式，`AUTO` 是不错的起点。
+4. 调整质量滑块（WebP/JPEG 建议 70–80，AVIF 建议 CRF 40–45）。
+5. 使用前后对比滑块，检查渐变、文字和人像细节。
+6. 即时下载优化后的文件——全部在本地浏览器完成，隐私无忧。
+
+## 第 4 步：提供响应式资源
+
+使用 `picture` 元素或 `img` 的 `srcset`/`sizes`，让浏览器为不同设备自动选择合适尺寸。
+
+```html
+<picture>
+  <source srcset="hero.avif" type="image/avif" />
+  <source srcset="hero.webp" type="image/webp" />
+  <img src="hero.jpg" alt="产品英雄图" width="1600" height="900" loading="lazy" />
+</picture>
+```
+
+## 第 5 步：延迟加载非关键图片
+
+- 对折叠以下的图片启用 `loading="lazy"`。
+- 使用占位符或模糊预览保持布局稳定。
+- 对大型图库或 UGC 内容考虑按需加载。
+
+## 第 6 步：度量与迭代
+
+- **PageSpeed Insights / Lighthouse**：找出下一批需要处理的图片。
+- **Search Console Core Web Vitals**：追踪 LCP/INP/CLS 趋势。
+- **CDN 报表**：验证带宽用量是否下降。
+- **产品分析**：将性能提升与转化或留存数据关联起来。
+
+## 进阶技巧（2025）
+
+- 引入 AVIF 处理高端摄影或 HDR 资源。
+- 在构建流程中用 Sharp/Imagick 自动生成多尺寸与多格式。
+- 利用 Service Worker 预抓取下一屏可能需要的英雄图。
+- 当有大量资产入库时，用脚本批量调用 CompressImage 进行离线压缩。
+
+## 运维检查清单
+
+- [ ] 英雄图 ≤ 250 KB（桌面）/ 150 KB（移动）
+- [ ] 插图 ≤ 100 KB
+- [ ] 所有图片都经过 CompressImage 预览并记录预设
+- [ ] 配置响应式资源与懒加载
+- [ ] 每季度跑一遍 WebPageTest/Lighthouse 并归档
+- [ ] 把结果分享给 SEO、设计、财务等干系人
+
+## 结论与下一步
+
+图片优化是一项持续性工作。只要坚持“审查 → 压缩 → 分发 → 度量”的循环，就能不断提升网站速度、留住用户并降低成本。
+
+**立即执行**：挑一页加载最慢的落地页，生成 Lighthouse 报告，列出前五张需要处理的图片，然后把它们丢进 [CompressImage](https://www.compressimage.dev/)——今天就能看到数据上的变化。
+
+---
+
+**相关文章：**
+- [2025 年图片压缩的商业价值](/zh/blog/importance-image-compression)
+- [如何无损压缩图片](/zh/blog/how-to-compress-an-image-without-losing-quality)

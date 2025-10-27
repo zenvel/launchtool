@@ -1,0 +1,130 @@
+---
+title: "Image Compression Basics: Formats, Quality, and Browser Tools"
+description: "A 2025 crash course on choosing the right image format, dialing in quality settings, and using browser-based tools to keep sites fast."
+translationKey: "image-compression-basics-formats-quality-and-browser-tools"
+date: "2025-10-28"
+author: "CompressImage Team"
+readTime: "11 min read"
+category: Guides
+tags:
+  - fundamentals
+  - formats
+  - tooling
+image: "/branding/og-default.png"
+tldr: "Pick the format that fits the asset (WebP/AVIF for photos, PNG/WebP lossless for UI), resize before compressing, and rely on modern browser tools like CompressImage or Squoosh to preview quality before you ship."
+draft: true
+faqs:
+  - question: "Which format should I start with in 2025?"
+    answer: "For photographs and gradients start with WebP, escalate to AVIF for maximum savings, and keep JPEG as a fallback. For transparent UI elements use PNG or WebP lossless."
+    href: "/blog/image-formats-guide"
+  - question: "What quality setting is safest?"
+    answer: "Begin at 75 for JPEG/WebP or CRF 45 for AVIF, then inspect the before/after slider. Raise quality only if you notice banding or soft text."
+    href: "/blog/how-to-compress-an-image-without-losing-quality"
+  - question: "Do I still need server-side compression if I use browser tools?"
+    answer: "Client-side tools like CompressImage cover most needs and keep files private. Pair them with responsive HTML (`picture`/`srcset`) and you rarely need heavy server processing."
+---
+
+Trying to digest every image compression buzzword at once can feel overwhelming. This guide distills the fundamentals—the formats, quality knobs, and browser-based utilities you actually need in 2025—to keep your site lightweight without sacrificing polish.
+
+## Step 1: Start with format fundamentals
+
+### WebP vs JPEG vs AVIF at a glance
+
+| Format | Best for | Pros | Cons |
+| --- | --- | --- | --- |
+| **WebP (lossy)** | Most photographs & illustrations | 25–35% smaller than JPEG, supports alpha | Requires fallbacks for older browsers |
+| **AVIF** | Premium photography, hero imagery | 30% smaller than WebP, HDR-ready | Slower encoding, Safari 17+ required |
+| **JPEG** | Legacy fallback, email, older browsers | Broad support, fast encoding | No transparency, artifacts at low quality |
+| **PNG (lossless)** | UI screenshots, text, logos | Razor-sharp edges, transparency | Large files for photos |
+| **WebP (lossless)** | UI with slight color gradients | Lossless compression, transparency | Slightly larger than PNG in some cases |
+| **SVG** | Icons, simple illustrations | Resolution independent, tiny | Not suited to complex photos |
+
+### Decision checklist
+
+1. **Identify the asset type** – photo, UI, icon, illustration, animation.
+2. **Check for transparency** – if yes, prefer PNG or WebP lossless.
+3. **Assess compatibility requirements** – enterprise intranets or email clients still lean on JPEG.
+4. **Choose the smallest acceptable format** – prefer WebP; escalate to AVIF when you control the client devices.
+5. **Keep fallbacks handy** – serve AVIF/WebP + JPEG via `<picture>` to cover every browser.
+
+## Step 2: Resize before compressing
+
+More than half of the “bloat” we uncover during audits comes from oversized dimensions, not format choice. Always export images at the largest display size you actually need (e.g., 1600px hero, 800px inline), then compress.
+
+## Step 3: Dial in quality like a pro
+
+### Quality ranges that work
+
+- **WebP / JPEG**: 70–80 is the sweet spot. Drop to 60 only after visual inspection.
+- **AVIF (CRF)**: 40–45 yields impressive reductions; raise to 35 for mission-critical imagery.
+- **PNG / WebP lossless**: Keep at 100; consider OxiPNG quantization for additional savings.
+
+### What to watch for
+
+- Banding in soft gradients or skies.
+- Halos around sharp edges (check UI screenshots at 100%).
+- Waxy skin textures in portraits.
+
+## Step 4: Use browser tools to preview compression
+
+### CompressImage (recommended)
+
+- Drag multiple files, choose AUTO or a specific format, and inspect with a before/after slider.
+- Unlimited usage, runs entirely inside the browser—ideal for privacy-conscious teams.
+- Exports WebP, AVIF, JPEG, PNG, and preserves metadata if required.
+
+### Squoosh
+
+- Experimental playground from Google with codec-level knobs (color subsampling, palette size).
+- Perfect for fine-tuning hero imagery, albeit single-file only.
+
+### Other helpful utilities
+
+- **DevTools > Coverage tab**: Spot oversized images on live pages.
+- **Lighthouse**: Flags uncompressed or incorrectly sized assets.
+- **web.dev/measure**: Offers Core Web Vitals + image optimization advice.
+
+## Step 5: Serve optimized assets the right way
+
+```html
+<picture>
+  <source srcset="hero.avif" type="image/avif" />
+  <source srcset="hero.webp" type="image/webp" />
+  <img src="hero.jpg" alt="Hero" width="1600" height="900" loading="lazy" />
+</picture>
+```
+
+- Combine `picture` with responsive `srcset` to feed appropriately sized files to each device.
+- Add `loading="lazy"` for below-the-fold imagery.
+- Use the `type` attribute so browsers pick the best format they support.
+
+## Step 6: Automate when volume grows
+
+- **Build scripts**: Use Sharp/Imagemin to generate multiple sizes/formats during CI.
+- **CMS workflows**: Hook into asset pipelines to run CompressImage in bulk or trigger webhooks.
+- **Caching**: Store compressed assets on a CDN; set cache-control headers generously.
+
+## Troubleshooting cheat sheet
+
+| Problem | Likely cause | Fix |
+| --- | --- | --- |
+| Banding or flat gradients | Quality slider too low, chroma subsampling | Raise quality by 5–10 points; use 4:4:4 in Squoosh |
+| Text appears fuzzy | JPEG/ WebP lossy used on UI | Switch to PNG or WebP lossless |
+| Files still huge | Dimensions unchanged | Resize before compressing |
+| AVIF not displaying | Browser lacks support | Serve JPEG/WebP fallback via `<picture>` |
+
+## Additional resources
+
+- Run [CompressImage](https://www.compressimage.dev/) as your daily driver for bulk tasks.
+- Download [Squoosh](https://squoosh.app/) for surgical optimizations.
+- Review our [image format guide](/blog/image-formats-guide) and [business case breakdown](/blog/importance-image-compression).
+
+## Summary
+
+Image compression basics boil down to smart choices: pick the best format, resize before you compress, preview the impact, then ship assets using modern HTML patterns. Master those fundamentals and you’ll keep performance budgets in check without compromising brand visuals.
+
+---
+
+**Related Articles:**
+- [Understanding Image Formats: JPEG vs PNG vs WebP vs AVIF](/blog/image-formats-guide)
+- [How to Optimize Images for Web Performance](/blog/optimize-images-web-performance)

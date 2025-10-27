@@ -1,0 +1,396 @@
+{
+  "common": {
+    "compressImage": "图片压缩",
+    "toggleMenu": "切换菜单",
+    "toggleTheme": "切换主题",
+    "lightMode": "切换至浅色模式",
+    "darkMode": "切换至深色模式"
+  },
+  "header": {
+    "whyUs": "为什么选择我们？",
+    "blog": "博客"
+  },
+  "footer": {
+    "product": "产品",
+    "features": "功能特性",
+    "pricing": "价格",
+    "company": "公司",
+    "about": "关于我们",
+    "blog": "博客",
+    "legal": "法律信息",
+    "privacyPolicy": "隐私政策",
+    "termsOfService": "服务条款",
+    "support": "支持",
+    "helpCenter": "帮助中心",
+    "contact": "联系我们",
+    "copyright": "© {year} 图片压缩。保留所有权利。"
+  },
+  "home": {
+    "hero": {
+      "title": "终极图片优化工具",
+      "subtitle": "安全高效地压缩 JPG、PNG、WebP 和 AVIF 图片。",
+      "selectImages": "选择图片",
+      "privacyNote": "100% 客户端处理。您的图片永远不会离开您的电脑。"
+    },
+    "quickAnswer": {
+      "title": "三步完成图片优化",
+      "summary": "无需注册，立即开始压缩，所有操作都在浏览器本地完成。",
+      "steps": {
+        "upload": {
+          "title": "上传或拖拽图片",
+          "description": "支持 JPG、PNG、WebP、AVIF 等格式，单张最大约 30 MB。"
+        },
+        "adjust": {
+          "title": "选择格式与质量",
+          "description": "使用智能预设或滑块微调，实时预览压缩效果。"
+        },
+        "download": {
+          "title": "立即下载",
+          "description": "优化文件立刻保存到本地，全程无等待、无数据泄露。"
+        }
+      }
+    },
+    "processing": {
+      "title": "正在处理您的图片",
+      "subtitle": "调整设置并下载优化后的图片",
+      "addMore": "添加更多图片"
+    },
+    "features": {
+      "privacy": {
+        "title": "绝对隐私",
+        "description": "所有压缩都在您的浏览器中完成。您的图片永远不会触及我们的服务器，确保您敏感文件的完全隐私和安全。"
+      },
+      "fast": {
+        "title": "极速快速",
+        "description": "采用现代 WebAssembly 技术，我们的压缩引擎提供闪电般的速度，同时不影响质量。"
+      },
+      "futureReady": {
+        "title": "面向未来",
+        "description": "使用 AVIF 和 WebP 等下一代格式进行优化，获得更高的压缩率和更好的网页性能。"
+      }
+    },
+    "seo": {
+      "title": "图片优化完整指南",
+      "whyMatters": {
+        "title": "为什么图片优化很重要",
+        "content": "在当今的数字环境中，图片优化对于网站性能、用户体验和 SEO 排名至关重要。大而未优化的图片会显著降低网站速度，导致更高的跳出率和更低的转化率。研究表明，页面加载时间延迟一秒可能导致转化率下降 7%。"
+      },
+      "formats": {
+        "title": "理解图片格式",
+        "content": "不同的图片格式适用于不同的用途。JPEG 适合具有复杂颜色的照片，PNG 擅长处理带透明度的图形，WebP 为照片和图形提供卓越的压缩效果，而 AVIF 代表着具有更好压缩率的尖端技术。选择正确的格式可以在不损失视觉质量的情况下将文件大小减少多达 50%。"
+      },
+      "processing": {
+        "title": "客户端 vs 服务器端处理",
+        "content": "传统的图片压缩工具需要将文件上传到服务器，这会引发隐私问题并增加延迟。客户端处理由现代浏览器技术（如 WebAssembly）驱动，在保持数据安全的同时提供相当或更好的性能。这种方法对于敏感图片或处理大批量文件时尤为重要。"
+      },
+      "bestPractices": {
+        "title": "网页图片最佳实践",
+        "content": "为了达到最佳效果，请始终在上传到网站之前压缩图片。为不同的屏幕分辨率使用多种尺寸的响应式图片。实现懒加载以延迟屏幕外图片的加载。考虑使用 WebP 和 AVIF 等现代格式，并为旧浏览器提供后备方案。结合这些实践可以在保持视觉质量的同时将页面权重减少 60-80%。"
+      }
+    }
+  },
+  "imageProcessing": {
+    "remove": "移除图片",
+    "original": "原始大小: {size}",
+    "compressed": "压缩后: {size}",
+    "beforeAfterSlider": "前后对比滑块",
+    "compressionSettings": "压缩设置",
+    "format": "格式",
+    "formatAuto": "自动",
+    "formatAutoHint": "智能选择最适合的格式",
+    "formatJpg": "JPG",
+    "formatJpgHint": "适合照片与渐变",
+    "formatPng": "PNG",
+    "formatPngHint": "保持透明与锐利边缘",
+    "formatWebp": "WebP",
+    "formatWebpHint": "质量与体积的平衡",
+    "formatAvif": "AVIF",
+    "formatAvifHint": "最高压缩率，新一代标准",
+    "quality": "质量",
+    "decreaseQuality": "降低质量",
+    "increaseQuality": "提升质量",
+    "newSize": "新大小:",
+    "download": "下载",
+    "compressing": "压缩中",
+    "updating": "更新中",
+    "fileSizeIncreased": "文件大小增加了",
+    "fileSizeIncreasedTip": "建议降低质量 (40-60%) 或切换到其他格式以获得更好的压缩效果。"
+  },
+  "about": {
+    "title": "关于图片压缩",
+    "intro": "我们相信图片优化应该是快速、安全且人人可用的。",
+    "mission": {
+      "title": "我们的使命",
+      "content": "图片压缩的诞生是为了解决我们作为开发者和创作者每天都会遇到的一个简单问题：如何快速压缩图片而不牺牲质量或隐私。我们厌倦了那些缓慢、充满广告、需要将敏感文件上传到第三方服务器的工具。我们知道一定有更好的方法。我们的使命是提供一个我们自己喜欢使用的工具——一个在您的浏览器中本地处理所有内容的工具，确保您的图片永远不会离开您的设备。"
+    },
+    "whyUs": {
+      "title": "为什么选择我们",
+      "content": "与其他将您的数据视为商品的压缩工具不同，我们相信隐私是一项权利，而不是一项功能。这一信念是我们所做一切的核心。所有处理都直接在您的浏览器中进行，使用基于 WebAssembly 的先进客户端算法。这意味着更快的处理速度、完全的隐私保护，以及没有服务器强加的令人沮丧的文件大小限制。只有您、您的浏览器和一个强大的工具在一起工作。"
+    },
+    "technology": {
+      "title": "我们的技术",
+      "content": "我们热衷于利用现代网络技术来提供最好的结果。我们的工具支持多种图片格式，包括 AVIF 和 WebP 等下一代格式，以实现卓越的压缩效果。我们提供精细的压缩设置控制和实时视觉对比滑块，让您在文件大小和质量之间找到完美的平衡。"
+    },
+    "contact": {
+      "title": "联系我们",
+      "content": "有问题或反馈？我们很乐意听到您的声音。我们是一个致力于打造最佳图片优化工具的小团队，您的声音有助于塑造我们的未来。访问我们的<contactLink>联系页面</contactLink>或通过我们的支持渠道联系我们。"
+    }
+  },
+  "features": {
+    "title": "为什么选择图片压缩？",
+    "subtitle": "发现使我们成为图片优化最佳选择的功能特性",
+    "privacy": {
+      "title": "100% 隐私安全",
+      "description": "所有图片处理都在您的浏览器本地进行。您的文件永远不会离开您的设备，确保完全的隐私和安全。无上传、无服务器、无数据收集。"
+    },
+    "speed": {
+      "title": "闪电般快速处理",
+      "description": "采用 WebAssembly 技术，我们的压缩引擎提供极速结果。同时处理多张图片，无需任何延迟或等待时间。"
+    },
+    "formats": {
+      "title": "多格式支持",
+      "description": "支持 JPEG、PNG、WebP 和 AVIF 格式。在格式之间转换，并使用下一代图片格式优化现代网页标准。"
+    },
+    "quality": {
+      "title": "质量控制",
+      "description": "微调压缩设置，在文件大小和视觉质量之间实现完美平衡。实时预览让您在下载前看到结果。"
+    },
+    "batch": {
+      "title": "批量处理",
+      "description": "一次上传和处理多张图片。通过在单次操作中优化整个文件夹的图片来节省时间。"
+    },
+    "comparison": {
+      "title": "前后对比",
+      "description": "交互式滑块让您并排比较原始和压缩图片。在下载前确保您的图片看起来完美。"
+    },
+    "free": {
+      "title": "完全免费",
+      "description": "无隐藏费用、无订阅计划、无文件大小限制。图片压缩完全免费供个人和商业项目使用。"
+    },
+    "noInstall": {
+      "title": "无需安装",
+      "description": "直接在您的浏览器中工作。无需下载或安装任何软件。随时随地从任何设备访问。"
+    },
+    "cta": {
+      "title": "准备好优化您的图片了吗？",
+      "description": "立即开始压缩图片，享受完全隐私和极速。",
+      "button": "开始使用"
+    }
+  },
+  "pricing": {
+    "title": "简单透明的定价",
+    "subtitle": "选择最适合您的方案",
+    "free": {
+      "name": "免费版",
+      "price": "$0",
+      "period": "/月",
+      "features": {
+        "unlimitedCompressions": "无限次压缩",
+        "allFormats": "支持所有格式（包括 AVIF）",
+        "clientSide": "客户端处理",
+        "noWatermarks": "无水印"
+      },
+      "button": "开始使用"
+    },
+    "pro": {
+      "name": "专业版",
+      "badge": "热门",
+      "comingSoon": "即将推出",
+      "features": {
+        "everythingInFree": "免费版的所有功能",
+        "unlimitedBatch": "无限批量处理",
+        "advancedSettings": "高级设置和控制",
+        "prioritySupport": "优先支持"
+      },
+      "emailPlaceholder": "您的邮箱...",
+      "button": "通知我",
+      "successMessage": "谢谢！我们会在专业版推出时通知您。"
+    },
+    "enterprise": {
+      "name": "企业版",
+      "price": "定制",
+      "features": {
+        "everythingInPro": "专业版的所有功能",
+        "fullApiAccess": "完整 API 访问权限",
+        "customIntegrations": "定制集成",
+        "dedicatedSupport": "专属支持和 SLA"
+      },
+      "button": "联系我们"
+    }
+  },
+  "contact": {
+    "title": "联系我们",
+    "subtitle": "我们很乐意听到您的声音",
+    "feedback": {
+      "title": "提供反馈",
+      "subtitle": "有建议或想法吗？我们很乐意听取。"
+    },
+    "support": {
+      "title": "联系支持",
+      "subtitle": "需要帮助吗？请在下面描述您的问题。"
+    },
+    "form": {
+      "name": "姓名",
+      "namePlaceholder": "您的姓名",
+      "email": "邮箱",
+      "emailPlaceholder": "your@email.com",
+      "subject": "主题",
+      "subjectPlaceholder": "我们能帮您什么？",
+      "message": "消息",
+      "messagePlaceholder": "详细描述您的消息...",
+      "submit": "发送消息",
+      "feedbackSubject": "反馈与建议",
+      "supportSubject": "支持请求",
+      "successMessage": "感谢您的消息！我们会尽快回复您。",
+      "errors": {
+        "nameRequired": "请填写您的姓名",
+        "emailRequired": "请填写您的邮箱",
+        "emailInvalid": "请输入有效的邮箱地址",
+        "subjectRequired": "请填写主题",
+        "messageRequired": "请填写消息内容"
+      }
+    }
+  },
+  "helpCenter": {
+    "title": "帮助中心",
+    "subtitle": "查找常见问题的答案",
+    "support": {
+      "documentation": {
+        "title": "文档",
+        "description": "全面的指南和教程"
+      },
+      "feedback": {
+        "title": "提供反馈",
+        "description": "有建议吗？我们很乐意听取。"
+      },
+      "email": {
+        "title": "邮件支持",
+        "description": "获取我们团队的帮助"
+      }
+    },
+    "faqTitle": "常见问题",
+    "faqs": {
+      "compression": {
+        "question": "压缩是如何工作的？",
+        "answer": "所有压缩都在您的浏览器中使用先进算法本地完成。您的图片永远不会离开您的设备，确保完全隐私。"
+      },
+      "formats": {
+        "question": "支持哪些图片格式？",
+        "answer": "我们支持所有主要图片格式，包括 JPG、PNG、WebP 和下一代 AVIF 格式。您还可以在优化时在格式之间进行转换。"
+      },
+      "fileSize": {
+        "question": "有文件大小限制吗？",
+        "answer": "没有！由于所有处理都在您的浏览器中进行，因此没有人为的文件大小限制。但是，请注意，非常大的文件（例如超过 30MB）可能需要更长的处理时间，具体取决于您计算机的性能。"
+      },
+      "batch": {
+        "question": "我可以一次压缩多张图片吗？",
+        "answer": "是的，您可以在我们的免费计划中同时上传和处理多张图片。对于高级批处理功能和更高的吞吐量，请考虑我们即将推出的专业版计划。"
+      },
+      "quality": {
+        "question": "压缩会降低图片质量吗？",
+        "answer": "您可以通过质量滑块完全控制压缩级别。更高的压缩会减小文件大小，但可能会影响质量。我们建议使用实时视觉对比滑块来找到适合您需求的理想平衡。"
+      },
+      "free": {
+        "question": "图片压缩真的免费吗？",
+        "answer": "是的，图片压缩的核心功能对所有人完全免费。我们为日常使用提供慷慨的限制。将来，我们将为有专业需求的重度用户推出可选的专业版计划。"
+      },
+      "browsers": {
+        "question": "支持哪些浏览器？",
+        "answer": "图片压缩使用 WebAssembly 等现代浏览器技术。为了获得最佳性能，我们建议使用最新版本的 Google Chrome、Mozilla Firefox、Apple Safari 或 Microsoft Edge。"
+      }
+    }
+  },
+  "blog": {
+    "title": "博客",
+    "subtitle": "关于图片压缩和网站优化的技巧、指南和见解。",
+    "backToBlog": "返回博客",
+    "backToAllPosts": "返回所有文章",
+    "readMore": "阅读更多",
+    "noPosts": "暂时还没有文章发布。",
+    "categoryLabel": "分类：{category}",
+    "tagsLabel": "标签：",
+    "pagination": {
+      "previous": "上一页",
+      "next": "下一页",
+      "page": "第 {current} / {total} 页"
+    },
+    "tldrHeading": "快速概要",
+    "faqHeading": "常见问题",
+    "readInLanguage": "查看{language}版本",
+    "tocHeading": "目录"
+  },
+  "privacy": {
+    "title": "隐私政策",
+    "effectiveDate": "生效日期：2025年10月10日",
+    "intro": "您的隐私是图片压缩最重要的功能。本政策使用简单明了的语言，尽可能清楚地说明我们如何处理您的数据。",
+    "images": {
+      "title": "最重要的事情：您的图片",
+      "paragraph1": "我们绝不会查看、上传、存储或传输您的图片。绝不会。",
+      "paragraph2": "所有图片处理都完全在您的网络浏览器中进行（这称为\"客户端处理\"）。您的文件永远不会通过网络发送到我们的服务器或任何第三方服务。"
+    },
+    "collect": {
+      "title": "我们收集的信息",
+      "intro": "为了改进我们的服务并了解我们的网站如何被使用，我们收集少量匿名、非个人数据。",
+      "analytics": {
+        "title": "匿名使用分析",
+        "description": "我们使用注重隐私的分析工具（如Plausible或Fathom）来统计页面访问和会话持续时间等信息。这些数据是汇总的，无法用于识别您的个人身份。"
+      },
+      "contact": {
+        "title": "联系信息",
+        "description": "如果您选择通过电子邮件联系我们，我们将仅使用您的电子邮件地址来回复您的询问。"
+      }
+    },
+    "notCollect": {
+      "title": "我们不收集的信息",
+      "intro": "我们对隐私的承诺同样体现在我们不做的事情上。",
+      "item1": "我们不会从您的图片中收集任何个人信息或元数据（如EXIF数据）。",
+      "item2": "我们不使用Google Analytics或任何创建侵入性用户档案的工具。",
+      "item3": "我们不使用Cookie进行跟踪或广告目的。",
+      "item4": "我们不会向任何第三方出售或共享您的信息。"
+    },
+    "cookies": {
+      "title": "Cookie",
+      "description": "我们仅使用必要的（或\"绝对必要的\"）Cookie来确保网站正常运行，例如记住您首选的主题（浅色/深色模式）。这些Cookie不会跟踪您，也不用于广告。"
+    },
+    "changes": {
+      "title": "本政策的变更",
+      "description": "我们可能会不时更新本隐私政策。我们将通过在本页面上发布新政策并更新顶部的\"生效日期\"来通知您任何变更。"
+    },
+    "contactSection": {
+      "title": "联系我们",
+      "description": "如果您对本隐私政策有任何疑问或顾虑，请随时通过以下方式联系我们："
+    }
+  },
+  "terms": {
+    "title": "服务条款",
+    "effectiveDate": "生效日期：2025年10月10日",
+    "useOfService": {
+      "title": "1. 服务使用",
+      "content": "欢迎来到图片压缩！通过访问或使用我们的网站和服务（\"服务\"），您同意受这些服务条款的约束。我们授予您有限的、非独占的、可撤销的许可，以在您的个人和商业项目中使用我们的服务，但须遵守这些条款。"
+    },
+    "userResponsibilities": {
+      "title": "2. 用户责任",
+      "content": "您对通过我们的服务处理的图片内容负全部责任。您同意不使用本服务处理任何非法、有害或侵犯他人权利的内容。由于所有处理都在您的设备上本地完成，我们无法访问或控制您的内容。"
+    },
+    "disclaimer": {
+      "title": "3. 免责声明",
+      "content": "本服务按\"原样\"和\"可用\"基础提供，不作任何明示或暗示的保证。我们不保证服务将满足您的要求或在不间断、安全或无错误的基础上可用。"
+    },
+    "limitation": {
+      "title": "4. 责任限制",
+      "content": "在任何情况下，图片压缩、其创建者或关联公司均不对任何间接、偶然、特殊、后果性或惩罚性损害承担责任，包括但不限于利润、数据、商誉或其他无形损失的损失，这些损失源于您访问或使用或无法访问或使用本服务。"
+    },
+    "changes": {
+      "title": "5. 条款变更",
+      "content": "我们保留随时修改这些条款的权利。我们将通过更新本页面顶部的日期来提供任何重大变更的通知。您在此类变更后继续使用本服务即表示您接受新条款。"
+    },
+    "law": {
+      "title": "6. 管辖法律",
+      "content": "这些条款应根据美国俄勒冈州的法律进行管辖和解释，而不考虑其法律冲突规定。"
+    },
+    "contactSection": {
+      "title": "7. 联系我们",
+      "content": "如果您对这些条款有任何疑问，请通过以下方式联系我们"
+    }
+  }
+}

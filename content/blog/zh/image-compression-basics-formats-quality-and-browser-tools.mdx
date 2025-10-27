@@ -1,0 +1,130 @@
+---
+title: "图片压缩基础：格式选择、质量控制与浏览器工具"
+description: "2025 年图片压缩速成课，教你选对格式、掌握质量参数，并利用浏览器工具保持网页极速加载。"
+translationKey: "image-compression-basics-formats-quality-and-browser-tools"
+date: "2025-10-28"
+author: 图片压缩团队
+readTime: 11 分钟阅读
+category: 指南
+tags:
+  - 基础
+  - 格式
+  - 工具
+image: "/branding/og-default.png"
+tldr: "先确认素材类型，再选 WebP/AVIF 或 PNG/WebP 无损，压缩前务必调整尺寸，并借助 CompressImage、Squoosh 等浏览器工具实时预览画质。"
+draft: true
+faqs:
+  - question: "2025 年应该优先使用哪些格式？"
+    answer: "照片和渐变图从 WebP 起步，需要更高压缩率时使用 AVIF，并保留 JPEG 作为回退；UI 与透明素材用 PNG 或 WebP 无损。"
+    href: "/zh/blog/image-formats-guide"
+  - question: "质量值设多少比较稳妥？"
+    answer: "JPEG/WebP 建议从 75 左右开始，AVIF 建议 CRF 45；若出现条纹或文字发糊，再稍微调高。"
+    href: "/zh/blog/how-to-compress-an-image-without-losing-quality"
+  - question: "用了浏览器端工具还需要服务器压缩吗？"
+    answer: "只要搭配 CompressImage 等本地工具和 `picture/srcset` 响应式手段，大多数场景无需额外服务器压缩。"
+---
+
+面对眼花缭乱的“图片优化”术语很容易迷失方向。这篇文章提炼 2025 年最核心的知识点——格式、质量控制以及必备的浏览器工具，让你在保持画面效果的同时控制文件体积。
+
+## 第一步：掌握格式要点
+
+### WebP / JPEG / AVIF 快速对比
+
+| 格式 | 最佳场景 | 优点 | 注意事项 |
+| --- | --- | --- | --- |
+| **WebP（有损）** | 大多数照片与插画 | 比 JPEG 小 25–35%，支持透明 | 旧浏览器需回退格式 |
+| **AVIF** | 高端摄影、英雄图、HDR | 比 WebP 再小约 30%，支持 HDR | 编码较慢，Safari 17+ 才原生支持 |
+| **JPEG** | 旧设备、邮件、备选 | 兼容性强、编码快 | 无透明，低质量时易出噪点 |
+| **PNG（无损）** | UI 截图、文字、Logo | 边缘锐利、透明支持 | 处理照片时代价大 |
+| **WebP（无损）** | 含轻微渐变的 UI | 无损压缩、支持透明 | 某些场景比 PNG 稍大 |
+| **SVG** | 图标、几何插画 | 分辨率无关、体积极小 | 不适合复杂照片 |
+
+### 决策清单
+
+1. **确认素材类型**：照片、UI、图标、插画还是动图？
+2. **是否需要透明**：需要则倾向 PNG 或 WebP 无损。
+3. **兼容性要求**：若需面向旧环境（例如内网、老浏览器），保留 JPEG。
+4. **选择体积最小的方案**：优先 WebP，追求极致时改用 AVIF。
+5. **准备回退格式**：使用 `<picture>` 同时提供 AVIF/WebP + JPEG。
+
+## 第二步：压缩前先调整尺寸
+
+我们在审计中发现，图片体积膨胀往往来自过大的分辨率。先将图片导出为实际需要的最大尺寸（如英雄图 1600px 宽、内文图 800px），再进入压缩环节。
+
+## 第三步：正确设置质量参数
+
+### 推荐范围
+
+- **WebP / JPEG**：70–80 是黄金区间，低于 60 前必须细查画质。
+- **AVIF**：CRF 40–45 兼顾质量与体积；关键场景可拉高到 35。
+- **PNG / WebP 无损**：保持 100，可结合 OxiPNG 量化进一步缩小。
+
+### 关注点
+
+- 柔和渐变是否出现条纹。
+- 锐边是否产生光晕（尤其是 UI 截图）。
+- 人像皮肤是否变得蜡质。
+
+## 第四步：善用浏览器工具预览
+
+### CompressImage（主推）
+
+- 支持批量拖拽，AUTO 模式会自动挑选最佳格式。
+- 内置前后对比滑块与实时体积估算。
+- 完全在浏览器本地运行，适合强调隐私的团队。
+
+### Squoosh
+
+- Google 推出的“实验田”，提供色度抽样、调色板等高级参数。
+- 每次只能处理一张图片，更适合关键素材的精调。
+
+### 其他辅助工具
+
+- **Chrome DevTools Coverage**：快速发现页面上的超大图片。
+- **Lighthouse**：提示未压缩或尺寸不合适的资源。
+- **web.dev/measure**：结合 Core Web Vitals 给出优化建议。
+
+## 第五步：正确分发优化后的资源
+
+```html
+<picture>
+  <source srcset="hero.avif" type="image/avif" />
+  <source srcset="hero.webp" type="image/webp" />
+  <img src="hero.jpg" alt="Hero" width="1600" height="900" loading="lazy" />
+</picture>
+```
+
+- 结合 `picture` 与 `srcset`/`sizes`，为不同设备提供合适尺寸。
+- 折叠以下的图片记得添加 `loading="lazy"`。
+- 使用 `type` 属性，让浏览器自动挑选支持的格式。
+
+## 第六步：批量需求出现时自动化
+
+- **构建脚本**：在 CI 中用 Sharp/Imagemin 输出多尺寸与多格式。
+- **CMS 工作流**：通过 Webhook 调用 CompressImage 批量压缩。
+- **CDN 缓存**：存储压缩后的资源，并设置合理的缓存头。
+
+## 故障排查速查表
+
+| 问题 | 可能原因 | 解决策略 |
+| --- | --- | --- |
+| 渐变出现色带 | 质量值过低或色度抽样过强 | 质量向上调整 5–10 点，或改为 4:4:4 | 
+| 文字发虚 | 使用了有损 JPEG/WebP 处理 UI | 改用 PNG 或 WebP 无损 |
+| 压缩率不理想 | 未调整图片尺寸 | 先缩放再压缩 |
+| AVIF 无法显示 | 部分浏览器不支持 | 通过 `<picture>` 提供 WebP/JPEG 回退 |
+
+## 延伸阅读
+
+- 访问 [CompressImage](https://www.compressimage.dev/) 作为日常批量工具。
+- 尝试 [Squoosh](https://squoosh.app/) 进行精细调节。
+- 查看我们的[图片格式对比](/zh/blog/image-formats-guide)与[图片压缩商业价值分析](/zh/blog/importance-image-compression)。
+
+## 总结
+
+图片压缩的基础逻辑很简单：选对格式、先调整尺寸、再利用工具预览效果，最后用现代 HTML 语法分发资源。掌握这些关键点，就能在不牺牲视觉品质的情况下保持网站敏捷。
+
+---
+
+**相关文章：**
+- [理解图片格式：JPEG、PNG、WebP、AVIF 全面指南](/zh/blog/image-formats-guide)
+- [如何提升网页图片性能](/zh/blog/optimize-images-web-performance)

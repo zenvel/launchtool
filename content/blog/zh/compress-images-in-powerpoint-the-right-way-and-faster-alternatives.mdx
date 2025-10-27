@@ -1,0 +1,94 @@
+---
+title: "在 PowerPoint 中压缩图片的正确姿势（附更快方案）"
+description: "用好 PowerPoint 内置压缩功能，避免常见画质坑，并提前批量优化素材，让演示文稿迅速瘦身。"
+translationKey: "compress-images-in-powerpoint-the-right-way-and-faster-alternatives"
+date: "2025-11-11"
+author: 图片压缩团队
+readTime: 8 分钟阅读
+category: 教程
+tags:
+  - PowerPoint
+  - 工作流
+  - 办公
+image: "/branding/og-default.png"
+tldr: "在 PowerPoint 中启用“压缩图片”，选择 150 ppi 并勾选“删除裁剪区域”可以快速减小体积；但更理想的做法是在导入前使用 CompressImage 批量压缩。"
+draft: true
+faqs:
+  - question: "PowerPoint 的压缩按钮在哪？"
+    answer: "选中任意图片，进入“图片格式”选项卡，点击“压缩图片”。如果要压缩整份文稿，取消勾选“仅应用于此图片”。"
+  - question: "应该选哪种分辨率？"
+    answer: "现场演示时，150 ppi（Web）是画质与体积的最佳平衡；大型 4K 屏幕可选择 330 ppi（HD）。"
+  - question: "如何防止裁剪后的隐藏区域拖慢文件？"
+    answer: "在压缩对话框中勾选“删除裁剪的图片区域”，否则隐藏像素仍会留在 PPTX 文件里。"
+---
+
+一旦往幻灯片里塞入高清照片，PPT 体积就会迅速飙升。Microsoft 虽然提供了“压缩图片”按钮，但默认设置常常效果有限，甚至让画质变模糊。本文教你正确使用该功能，并提供更快捷的替代流程。
+
+## 第一部分：用好 PowerPoint 内置压缩
+
+1. 打开 PPT，**选中任意图片**（设置可应用于全局）。
+2. 切换到 **“图片格式” → “压缩图片”**。
+3. 在弹窗中：
+   - **取消勾选“仅应用于此图片”**，这样整份文稿都会压缩。
+   - **勾选“删除裁剪的图片区域”**，清理裁剪后仍被保留的像素。
+   - 选择合适的 **目标分辨率**：
+     | 分辨率 | 适用场景 |
+     | --- | --- |
+     | **网页（150 ppi）** | 适合投影或线上分享 | 
+     | **打印（220 ppi）** | 计划打印讲义时使用 | 
+     | **高清（330 ppi）** | 需要在大屏或 4K 显示时保持细节 | 
+     | **保持原始分辨率** | 不压缩，不推荐 |
+4. 点击 **“确定”** 保存并查看文件大小变化。
+
+### 快速瘦身小贴士
+
+- 清理未使用的版式与隐藏幻灯片。
+- 避免直接粘贴剪贴板图片，推荐使用“插入 → 图片”。
+- 尽量采用向量图标或可编辑元素替代表格截图。
+
+## 第二部分：更高效的批量替代方案
+
+PowerPoint 内置压缩适合临时处理，但如果频繁制作新幻灯片，最好在导入前就压缩图片。
+
+### CompressImage（推荐）
+
+1. 打开 [CompressImage](https://www.compressimage.dev/)。
+2. 将准备插入 PPT 的图片拖入窗口。
+3. 选择 `AUTO` 或指定 WebP/AVIF/JPEG 格式。
+4. 调整质量（建议 WebP/JPEG 设为 75），通过前后对比滑块确认细节无损。
+5. 下载优化后的图片，再插入 PPT，文稿从源头保持轻量。
+
+### Squoosh：关键图片精调
+
+进入 [Squoosh](https://squoosh.app/) 可以调整色度抽样、MozJPEG 等高级参数，适合对关键视觉素材进行逐张调校。
+
+### 批量自动化思路
+
+- 建立共享的“压缩素材库”，团队引用时无需重复压缩。
+- 使用 PowerShell/AppleScript 批量替换模板文件中的图片。
+- 将最终文稿存放在 OneDrive/SharePoint，保留压缩前后的版本记录。
+
+## 第三部分：保持 PPT 精简的其他技巧
+
+- **尽量使用矢量图标**（PowerPoint 内置或导入 SVG）。
+- **谨慎嵌入字体**，只嵌 subset 字符集，避免文件暴涨。
+- **不要盲目把幻灯片导出为图片再贴回 PPT**，会导致体积剧增。
+- 定期清理 Windows 暂存文件；PPTX 本质是 Zip 压缩包，残留文件会被打包进去。
+
+## 推荐流程示例
+
+1. 收集所有素材。
+2. 在 CompressImage 中批量压缩（WebP 75 或 PNG 无损）。
+3. 插入到 PowerPoint 模板。
+4. 完成编辑后，再运行一次内置压缩并勾选“删除裁剪区域”。
+5. 保存为 PPTX，必要时导出 PDF 版本。
+
+## 总结
+
+正确使用 PowerPoint 的压缩对话框可以快速瘦身，但最靠谱的做法是在导入前就优化图片。结合 CompressImage、Squoosh 等工具，并留意 PowerPoint 的隐藏选项，就能让幻灯片既轻量又清晰。
+
+---
+
+**相关文章：**
+- [如何为网站减小图片体积：8 个实用技巧](/zh/blog/reduce-image-file-size-for-the-web-8-proven-techniques)
+- [如何无损压缩图片](/zh/blog/how-to-compress-an-image-without-losing-quality)

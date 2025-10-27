@@ -1,0 +1,94 @@
+---
+title: "Compress Images in PowerPoint the Right Way (and Faster Alternatives)"
+description: "Cut PPT deck size in minutes: master PowerPoint’s built-in compression, avoid quality traps, and discover faster browser-based workflows."
+translationKey: "compress-images-in-powerpoint-the-right-way-and-faster-alternatives"
+date: "2025-11-11"
+author: "CompressImage Team"
+readTime: "8 min read"
+category: Tutorials
+tags:
+  - powerpoint
+  - workflow
+  - office
+image: "/branding/og-default.png"
+tldr: "Use PowerPoint’s “Compress Pictures” with ‘Web (150 ppi)’ plus ‘Delete cropped areas’ to shrink decks quickly, but switch to CompressImage for batch control and better quality before you import assets."
+draft: true
+faqs:
+  - question: "Where is the Compress Pictures button in PowerPoint?"
+    answer: "Select any image, go to Picture Format → Compress Pictures. Uncheck ‘Apply only to this picture’ if you want to compress the entire deck."
+  - question: "What resolution should I choose?"
+    answer: "For presentations shown on standard projectors, ‘Web (150 ppi)’ strikes the balance between clarity and size. Use ‘HD (330 ppi)’ when presenting on large 4K displays."
+  - question: "How do I keep cropping edits from bloating the file?"
+    answer: "In the Compress Pictures dialog, tick ‘Delete cropped areas of pictures’. Otherwise hidden pixels remain embedded and the deck stays large."
+---
+
+PowerPoint decks balloon fast once you drag in high-resolution imagery. Microsoft ships a “Compress Pictures” button, but the default settings can blur slides—or barely shrink anything. Here’s how to use it properly and when to switch to faster, higher-quality alternatives.
+
+## Part 1: Use PowerPoint’s built-in compression
+
+1. **Open your deck and select an image.** Any image works; the settings can apply to all slides.
+2. Navigate to **Picture Format → Compress Pictures**.
+3. In the dialog:
+   - **Uncheck “Apply only to this picture”** if you want to compress every image in the file.
+   - **Check “Delete cropped areas of pictures.”** This removes hidden pixels left over after cropping.
+   - Choose a **target resolution**:
+     | Resolution | When to use |
+     | --- | --- |
+     | **Web (150 ppi)** | Best balance for on-screen presentations and online sharing |
+     | **Print (220 ppi)** | When you’ll print handouts |
+     | **HD (330 ppi)** | Large venues with 4K displays |
+     | **Use source** | Skip compression (not recommended for large decks) |
+4. Click **OK**, save the file, and note the new size.
+
+### Quick win checklist
+
+- Remove unused master slides and hidden images.
+- Avoid pasting images straight from the clipboard—use Insert → Picture so PowerPoint doesn’t embed full-resolution copies.
+- Convert SmartArt or text-heavy screenshots into vector shapes when possible.
+
+## Part 2: Faster alternatives for bulk image prep
+
+PowerPoint’s compressor works, but it’s slow when you handle new assets each week. Instead, compress images **before** importing them into the deck.
+
+### CompressImage (recommended)
+
+1. Visit [CompressImage](https://www.compressimage.dev/).
+2. Drag in the photos you plan to add to the deck.
+3. Choose `AUTO` or set WebP/AVIF/JPEG manually.
+4. Adjust quality (try 75 for WebP/JPEG) while using the before/after slider to ensure text and gradients stay sharp.
+5. Download the optimized images; then insert them into PowerPoint. The deck stays lean from the start.
+
+### Squoosh for pixel-perfect tweaking
+
+If you must preserve every gradient, load the asset into [Squoosh](https://squoosh.app/). Tweak chroma subsampling or MozJPEG settings, export lossless PNGs for logos, then bring them into the deck.
+
+### Automate recurring decks
+
+- Maintain a shared folder of pre-compressed assets for your team.
+- Use a PowerShell or AppleScript to bulk replace images in templates with their compressed versions.
+- Store decks in OneDrive or SharePoint to retain version history after optimization.
+
+## Part 3: Additional tips to keep presentations small
+
+- **Use vector icons**: leverage PowerPoint’s built-in icons or import SVGs.
+- **Embed fonts sparingly**: embedding custom fonts adds weight; embed only subset characters if necessary.
+- **Export slides as images** only for specific needs—doing so bloats deck size.
+- **Regularly clean the Recycle Bin** in Windows; sometimes duplicate temp files hide inside PPTX archives.
+
+## Workflow example
+
+1. Collect imagery.
+2. Batch optimize with CompressImage (WebP 75 or PNG lossless for UI).
+3. Insert into PowerPoint.
+4. After final edits, run Compress Pictures with “Delete cropped areas” to remove leftovers.
+5. Save as PPTX (and optionally export a PDF for easy sharing).
+
+## Conclusion
+
+PowerPoint’s compression dialog is a useful emergency lever, but the most reliable way to manage deck size is to optimize assets before they ever reach the slides. With a combination of CompressImage, occasional Squoosh tweaks, and mindful PowerPoint settings, your presentations will travel lighter and look sharper.
+
+---
+
+**Related Articles:**
+- [Reduce Image File Size for the Web: 8 Proven Techniques](/blog/reduce-image-file-size-for-the-web-8-proven-techniques)
+- [How to Compress an Image Without Losing Quality](/blog/how-to-compress-an-image-without-losing-quality)

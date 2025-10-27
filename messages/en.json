@@ -1,0 +1,396 @@
+{
+  "common": {
+    "compressImage": "CompressImage",
+    "toggleMenu": "Toggle menu",
+    "toggleTheme": "Toggle theme",
+    "lightMode": "Switch to light mode",
+    "darkMode": "Switch to dark mode"
+  },
+  "header": {
+    "whyUs": "Why Us?",
+    "blog": "Blog"
+  },
+  "footer": {
+    "product": "Product",
+    "features": "Features",
+    "pricing": "Pricing",
+    "company": "Company",
+    "about": "About",
+    "blog": "Blog",
+    "legal": "Legal",
+    "privacyPolicy": "Privacy Policy",
+    "termsOfService": "Terms of Service",
+    "support": "Support",
+    "helpCenter": "Help Center",
+    "contact": "Contact",
+    "copyright": "© {year} CompressImage. All rights reserved."
+  },
+  "home": {
+    "hero": {
+      "title": "The Ultimate Image Optimizer",
+      "subtitle": "Compress JPG, PNG, WebP, and AVIF images privately and efficiently.",
+      "selectImages": "Select Image(s)",
+      "privacyNote": "100% Client-Side Processing. Your images never leave your computer."
+    },
+    "quickAnswer": {
+      "title": "Optimize images in 3 quick steps",
+      "summary": "Start compressing instantly—no sign-up, no uploads to external servers.",
+      "steps": {
+        "upload": {
+          "title": "Upload or drag your images",
+          "description": "Works with JPG, PNG, WebP, and AVIF files up to 30 MB each."
+        },
+        "adjust": {
+          "title": "Tune format and quality",
+          "description": "Use smart presets or fine-tune sliders with real-time previews."
+        },
+        "download": {
+          "title": "Download instantly",
+          "description": "Save optimized files locally in under a minute—no waiting, no data left behind."
+        }
+      }
+    },
+    "processing": {
+      "title": "Processing Your Images",
+      "subtitle": "Adjust settings and download your optimized images",
+      "addMore": "Add More Images"
+    },
+    "features": {
+      "privacy": {
+        "title": "Absolute Privacy",
+        "description": "All compression is done in your browser. Your images never touch our servers, ensuring complete privacy and security for your sensitive files."
+      },
+      "fast": {
+        "title": "Blazing Fast",
+        "description": "Powered by modern WebAssembly technology, our compression engine delivers lightning-fast results without compromising on quality."
+      },
+      "futureReady": {
+        "title": "Future-Ready",
+        "description": "Optimize with next-gen formats like AVIF and WebP for superior compression ratios and better web performance."
+      }
+    },
+    "seo": {
+      "title": "A Complete Guide to Image Optimization",
+      "whyMatters": {
+        "title": "Why Image Optimization Matters",
+        "content": "In today's digital landscape, image optimization is crucial for website performance, user experience, and SEO rankings. Large, unoptimized images can significantly slow down your website, leading to higher bounce rates and lower conversion rates. Studies show that a one-second delay in page load time can result in a 7% reduction in conversions."
+      },
+      "formats": {
+        "title": "Understanding Image Formats",
+        "content": "Different image formats serve different purposes. JPEG is ideal for photographs with complex colors, PNG excels at graphics with transparency, WebP offers superior compression for both photos and graphics, and AVIF represents the cutting edge with even better compression ratios. Choosing the right format can reduce file sizes by up to 50% without visible quality loss."
+      },
+      "processing": {
+        "title": "Client-Side vs Server-Side Processing",
+        "content": "Traditional image compression tools require uploading your files to a server, which raises privacy concerns and adds latency. Client-side processing, powered by modern browser technologies like WebAssembly, keeps your data secure while delivering comparable or better performance. This approach is particularly important for sensitive images or when working with large batches of files."
+      },
+      "bestPractices": {
+        "title": "Best Practices for Web Images",
+        "content": "To achieve optimal results, always compress images before uploading them to your website. Use responsive images with multiple sizes for different screen resolutions. Implement lazy loading to defer off-screen images. Consider using modern formats like WebP and AVIF with fallbacks for older browsers. These practices combined can reduce your page weight by 60-80% while maintaining visual quality."
+      }
+    }
+  },
+  "imageProcessing": {
+    "remove": "Remove image",
+    "original": "Original: {size}",
+    "compressed": "Compressed: {size}",
+    "beforeAfterSlider": "Before/After Slider",
+    "compressionSettings": "Compression Settings",
+    "format": "Format",
+    "formatAuto": "AUTO",
+    "formatAutoHint": "Smart choice based on your image",
+    "formatJpg": "JPG",
+    "formatJpgHint": "Great for photographs",
+    "formatPng": "PNG",
+    "formatPngHint": "Best for transparency",
+    "formatWebp": "WebP",
+    "formatWebpHint": "Balanced quality and size",
+    "formatAvif": "AVIF",
+    "formatAvifHint": "Maximum compression, modern browsers",
+    "quality": "Quality",
+    "decreaseQuality": "Decrease quality",
+    "increaseQuality": "Increase quality",
+    "newSize": "New Size:",
+    "download": "Download",
+    "compressing": "Compressing",
+    "updating": "Updating",
+    "fileSizeIncreased": "File size increased",
+    "fileSizeIncreasedTip": "Try lowering quality (40-60%) or switching to a different format for better compression."
+  },
+  "about": {
+    "title": "About CompressImage",
+    "intro": "We believe that image optimization should be fast, secure, and accessible to everyone.",
+    "mission": {
+      "title": "Our Mission",
+      "content": "CompressImage was created to solve a simple problem that many of us, as developers and creators, face every day: how to quickly compress images without sacrificing quality or our privacy. We were tired of slow, ad-filled tools that required uploading our sensitive files to third-party servers. We knew there had to be a better way. Our mission is to provide a tool that we ourselves love to use—one that processes everything locally in your browser, ensuring your images never leave your device."
+    },
+    "whyUs": {
+      "title": "Why Choose Us",
+      "content": "Unlike other compression tools that treat your data as a commodity, we believe your privacy is a right, not a feature. This belief is at the core of everything we do. All processing happens directly in your browser using advanced, client-side algorithms built on WebAssembly. This means faster processing, complete privacy, and no frustrating file size limits imposed by a server. It's just you, your browser, and a powerful tool working together."
+    },
+    "technology": {
+      "title": "Our Technology",
+      "content": "We are passionate about leveraging modern web technologies to deliver the best possible results. Our tool supports multiple image formats, including next-gen formats like AVIF and WebP, for superior compression. We provide fine-grained control over compression settings and a real-time visual comparison slider, giving you the perfect balance between file size and quality."
+    },
+    "contact": {
+      "title": "Get in Touch",
+      "content": "Have questions or feedback? We'd love to hear from you. We are a small team dedicated to building the best image optimization tool possible, and your voice helps shape our future. Visit our <contactLink>Contact Page</contactLink> or reach out through our support channels."
+    }
+  },
+  "features": {
+    "title": "Why Choose CompressImage?",
+    "subtitle": "Discover the features that make us the best choice for image optimization",
+    "privacy": {
+      "title": "100% Private & Secure",
+      "description": "All image processing happens locally in your browser. Your files never leave your device, ensuring complete privacy and security. No uploads, no servers, no data collection."
+    },
+    "speed": {
+      "title": "Lightning Fast Processing",
+      "description": "Powered by WebAssembly technology, our compression engine delivers blazing-fast results. Process multiple images simultaneously without any delays or waiting times."
+    },
+    "formats": {
+      "title": "Multiple Format Support",
+      "description": "Support for JPEG, PNG, WebP, and AVIF formats. Convert between formats and optimize for modern web standards with next-gen image formats."
+    },
+    "quality": {
+      "title": "Quality Control",
+      "description": "Fine-tune compression settings to achieve the perfect balance between file size and visual quality. Real-time preview lets you see the results before downloading."
+    },
+    "batch": {
+      "title": "Batch Processing",
+      "description": "Upload and process multiple images at once. Save time by optimizing entire folders of images in a single operation."
+    },
+    "comparison": {
+      "title": "Before/After Comparison",
+      "description": "Interactive slider lets you compare original and compressed images side by side. Ensure your images look perfect before downloading."
+    },
+    "free": {
+      "title": "Completely Free",
+      "description": "No hidden fees, no subscription plans, no file size limits. CompressImage is completely free to use for personal and commercial projects."
+    },
+    "noInstall": {
+      "title": "No Installation Required",
+      "description": "Works directly in your browser. No need to download or install any software. Access from any device, anytime, anywhere."
+    },
+    "cta": {
+      "title": "Ready to optimize your images?",
+      "description": "Start compressing images now with complete privacy and blazing-fast speed.",
+      "button": "Get Started"
+    }
+  },
+  "pricing": {
+    "title": "Simple, Transparent Pricing",
+    "subtitle": "Choose the plan that works best for you",
+    "free": {
+      "name": "Free",
+      "price": "$0",
+      "period": "/month",
+      "features": {
+        "unlimitedCompressions": "Unlimited compressions",
+        "allFormats": "All formats supported (incl. AVIF)",
+        "clientSide": "Client-side processing",
+        "noWatermarks": "No watermarks"
+      },
+      "button": "Get Started"
+    },
+    "pro": {
+      "name": "Pro",
+      "badge": "Popular",
+      "comingSoon": "Coming Soon",
+      "features": {
+        "everythingInFree": "Everything in Free",
+        "unlimitedBatch": "Unlimited batch processing",
+        "advancedSettings": "Advanced settings & controls",
+        "prioritySupport": "Priority support"
+      },
+      "emailPlaceholder": "Your email...",
+      "button": "Notify Me",
+      "successMessage": "Thank you! We'll notify you when the Pro plan is launched."
+    },
+    "enterprise": {
+      "name": "Enterprise",
+      "price": "Custom",
+      "features": {
+        "everythingInPro": "Everything in Pro",
+        "fullApiAccess": "Full API access",
+        "customIntegrations": "Custom integrations",
+        "dedicatedSupport": "Dedicated support & SLA"
+      },
+      "button": "Get in Touch"
+    }
+  },
+  "contact": {
+    "title": "Contact Us",
+    "subtitle": "We'd love to hear from you",
+    "feedback": {
+      "title": "Provide Feedback",
+      "subtitle": "Have a suggestion or an idea? We'd love to hear it."
+    },
+    "support": {
+      "title": "Contact Support",
+      "subtitle": "Need help with something? Describe your issue below."
+    },
+    "form": {
+      "name": "Name",
+      "namePlaceholder": "Your Name",
+      "email": "Email",
+      "emailPlaceholder": "your@email.com",
+      "subject": "Subject",
+      "subjectPlaceholder": "How can we help?",
+      "message": "Message",
+      "messagePlaceholder": "Describe your message in detail...",
+      "submit": "Send Message",
+      "feedbackSubject": "Feedback & Suggestions",
+      "supportSubject": "Support Request",
+      "successMessage": "Thank you for your message! We will get back to you soon.",
+      "errors": {
+        "nameRequired": "Please enter your name",
+        "emailRequired": "Please enter your email",
+        "emailInvalid": "Please enter a valid email address",
+        "subjectRequired": "Please enter a subject",
+        "messageRequired": "Please enter your message"
+      }
+    }
+  },
+  "helpCenter": {
+    "title": "Help Center",
+    "subtitle": "Find answers to common questions",
+    "support": {
+      "documentation": {
+        "title": "Documentation",
+        "description": "Comprehensive guides and tutorials"
+      },
+      "feedback": {
+        "title": "Provide Feedback",
+        "description": "Have a suggestion? We'd love to hear it."
+      },
+      "email": {
+        "title": "Email Support",
+        "description": "Get help from our team"
+      }
+    },
+    "faqTitle": "Frequently Asked Questions",
+    "faqs": {
+      "compression": {
+        "question": "How does the compression work?",
+        "answer": "All compression happens locally in your browser using advanced algorithms. Your images never leave your device, ensuring complete privacy."
+      },
+      "formats": {
+        "question": "What image formats are supported?",
+        "answer": "We support all major image formats, including JPG, PNG, WebP, and the next-generation AVIF format. You can also convert between formats while optimizing."
+      },
+      "fileSize": {
+        "question": "Is there a file size limit?",
+        "answer": "No! Since all processing happens in your browser, there are no artificial file size limits. However, please note that very large files (e.g., over 30MB) may take longer to process depending on your computer's performance."
+      },
+      "batch": {
+        "question": "Can I compress multiple images at once?",
+        "answer": "Yes, you can upload and process multiple images simultaneously on our free plan. For advanced batch processing features and higher throughput, consider our upcoming Pro plan."
+      },
+      "quality": {
+        "question": "Will compression reduce image quality?",
+        "answer": "You have full control over the compression level via the quality slider. Higher compression reduces the file size but may affect quality. We recommend using our live visual comparison slider to find the ideal balance for your needs."
+      },
+      "free": {
+        "question": "Is CompressImage really free?",
+        "answer": "Yes, the core features of CompressImage are completely free for everyone. We have generous limits for everyday use. In the future, we will introduce an optional Pro plan for users with heavy-duty professional needs."
+      },
+      "browsers": {
+        "question": "Which browsers are supported?",
+        "answer": "CompressImage uses modern browser technologies like WebAssembly. For the best performance, we recommend using the latest version of Google Chrome, Mozilla Firefox, Apple Safari, or Microsoft Edge."
+      }
+    }
+  },
+  "blog": {
+    "title": "Blog",
+    "subtitle": "Tips, guides, and insights about image compression and web optimization.",
+    "backToBlog": "Back to Blog",
+    "backToAllPosts": "Back to all posts",
+    "readMore": "Read more",
+    "noPosts": "No posts have been published yet.",
+    "categoryLabel": "Category: {category}",
+    "tagsLabel": "Tags:",
+    "pagination": {
+      "previous": "Previous",
+      "next": "Next",
+      "page": "Page {current} of {total}"
+    },
+    "tldrHeading": "Quick Summary",
+    "faqHeading": "Frequently Asked Questions",
+    "readInLanguage": "Read in {language}",
+    "tocHeading": "Table of contents"
+  },
+  "privacy": {
+    "title": "Privacy Policy",
+    "effectiveDate": "Effective Date: October 10, 2025",
+    "intro": "Your privacy is the most important feature of CompressImage. This policy is written in plain language to be as clear as possible about how we handle your data.",
+    "images": {
+      "title": "The Most Important Thing: Your Images",
+      "paragraph1": "We never see, upload, store, or transmit your images. Period.",
+      "paragraph2": "All image processing happens exclusively within your web browser on your own computer (this is known as \"client-side processing\"). Your files are never sent over the network to our servers or any third-party service."
+    },
+    "collect": {
+      "title": "What Information We Collect",
+      "intro": "To improve our service and understand how our website is used, we collect a minimal amount of anonymous, non-personal data.",
+      "analytics": {
+        "title": "Anonymous Usage Analytics",
+        "description": "We use a privacy-focused analytics tool (like Plausible or Fathom) to count things like page visits and session duration. This data is aggregated and cannot be used to identify you personally."
+      },
+      "contact": {
+        "title": "Contact Information",
+        "description": "If you choose to contact us via email, we will use your email address solely to respond to your inquiry."
+      }
+    },
+    "notCollect": {
+      "title": "What Information We DO NOT Collect",
+      "intro": "Our commitment to your privacy is just as much about what we don't do.",
+      "item1": "We do not collect any personal information or metadata (like EXIF data) from your images.",
+      "item2": "We do not use Google Analytics or any tool that creates invasive user profiles.",
+      "item3": "We do not use cookies for tracking or advertising purposes.",
+      "item4": "We do not sell or share your information with any third parties."
+    },
+    "cookies": {
+      "title": "Cookies",
+      "description": "We use only essential (or \"strictly necessary\") cookies to ensure the website functions properly, for example, to remember your preferred theme (light/dark mode). These cookies do not track you and are not used for advertising."
+    },
+    "changes": {
+      "title": "Changes to This Policy",
+      "description": "We may update this Privacy Policy from time to time. We will notify you of any changes by posting the new policy on this page and updating the \"Effective Date\" at the top."
+    },
+    "contactSection": {
+      "title": "Contact Us",
+      "description": "If you have any questions or concerns about this Privacy Policy, please do not hesitate to contact us at:"
+    }
+  },
+  "terms": {
+    "title": "Terms of Service",
+    "effectiveDate": "Effective Date: October 10, 2025",
+    "useOfService": {
+      "title": "1. Use of Service",
+      "content": "Welcome to CompressImage! By accessing or using our website and services (\"Service\"), you agree to be bound by these Terms of Service. We grant you a limited, non-exclusive, revocable license to use our Service for your personal and commercial projects, subject to these terms."
+    },
+    "userResponsibilities": {
+      "title": "2. User Responsibilities",
+      "content": "You are solely responsible for the content of the images you process through our Service. You agree not to use the Service to process any content that is illegal, harmful, or violates the rights of others. As all processing is done locally on your device, we have no access to or control over your content."
+    },
+    "disclaimer": {
+      "title": "3. Disclaimer of Warranties",
+      "content": "The Service is provided on an \"as is\" and \"as available\" basis without any warranties, express or implied. We do not warrant that the service will meet your requirements or be available on an uninterrupted, secure, or error-free basis."
+    },
+    "limitation": {
+      "title": "4. Limitation of Liability",
+      "content": "In no event shall CompressImage, its creators, or affiliates be liable for any indirect, incidental, special, consequential, or punitive damages, including without limitation, loss of profits, data, goodwill, or other intangible losses, resulting from your access to or use of or inability to access or use the Service."
+    },
+    "changes": {
+      "title": "5. Changes to Terms",
+      "content": "We reserve the right to modify these terms at any time. We will provide notice of any significant changes by updating the date at the top of this page. Your continued use of the Service after such changes constitutes your acceptance of the new terms."
+    },
+    "law": {
+      "title": "6. Governing Law",
+      "content": "These Terms shall be governed and construed in accordance with the laws of the State of Oregon, United States, without regard to its conflict of law provisions."
+    },
+    "contactSection": {
+      "title": "7. Contact Us",
+      "content": "If you have any questions about these Terms, please contact us at"
+    }
+  }
+}

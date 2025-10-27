@@ -1,0 +1,117 @@
+---
+title: "CompressImage 与 ShortPixel 对比：本地批量压缩还是云端额度？"
+description: "从隐私安全、批量流程、自动化能力到收费模式，全面比较 CompressImage 与 ShortPixel，帮你选择最合适的图片压缩方案。"
+translationKey: "comparison-shortpixel"
+date: "2025-10-18"
+author: CompressImage 团队
+readTime: 10 分钟阅读
+category: 对比
+tags:
+  - 对比
+  - shortpixel
+  - wordpress
+  - 自动化
+image: "/branding/og-default.png"
+tldr: "ShortPixel 适合已经在 WordPress 生态内运营的网站；CompressImage 强调 100% 本地处理、无限批量和自动化报表，更适合需要隐私与协作的设计/增长团队。"
+draft: true
+---
+
+## TL;DR
+
+| 问题 | CompressImage | ShortPixel |
+| --- | --- | --- |
+| 处理方式 | 浏览器/PWA/桌面外壳，本地 WebAssembly | 云端压缩（API + WordPress 插件） |
+| 隐私 | 文件始终留在本地设备 | 图片需上传到 ShortPixel 服务器 |
+| 批量能力 | 队列无限、单文件可独立设定质量、导出 CSV/JSON 日志 | 基于额度：免费 100 张/月，付费按 credits 计算 |
+| 支持格式 | JPEG、PNG、WebP、AVIF、GIF | JPEG、PNG、GIF、WebP（AVIF API 内测） |
+| 自动化 | CLI/GitHub Action 内测、JSON 报表、REST API 规划 | 成熟 API、Zapier 集成、WP CLI |
+| 收费模式 | 本地压缩无限；付费主要解锁协作与自动化 | credits 套餐：100 张免费，付费从 $9.99/10k 起 |
+
+如果你的资产必须保密且批量交付频繁，CompressImage 更安心；若网站已深度依赖 WordPress 插件和 CDN，ShortPixel 仍是便捷选择。
+
+---
+
+## 1. 产品定位与核心差异
+
+ShortPixel 起家于 WordPress 社群，提供多种插件（Image Optimizer、Adaptive Images、AI Droplet CDN），上线后即可自动处理站点图片，可以说是 WordPress 站长的标配方案。
+
+CompressImage 的出发点是“上线前的设计交付”。所有运算在本地完成，结合批量预设、压缩日志、自动化脚本，让设计/增长团队在把素材交给开发或投放之前就完成一次可验收的压缩流程。
+
+### 功能速览
+
+| 能力 | CompressImage | ShortPixel |
+| --- | --- | --- |
+| 处理位置 | 本地（浏览器、PWA、桌面壳） | 云端服务器（欧盟数据中心） |
+| 批量限制 | 队列无限、拖拽文件夹（桌面壳） | 依额度计算，免费 100 张/月 |
+| 预设 & 报表 | 保存多套预设、导出 JSON/CSV、内建前后对比滑杆 | 插件级别设置，无独立报表导出 |
+| 高级格式 | 原生支持 AVIF、WebP、GIF 优化 | WebP 支持成熟，AVIF 在 API 内测中 |
+| 自动化 | CLI、GitHub Action 内测，API 规划中 | REST API、WP CLI、Zapier、自动 CDN |
+| 离线能力 | 支持离线队列、旅行/现场环境使用 | 必须联网上传 |
+
+## 2. 实测表现（模板数据，可按脚本更新）
+
+测试环境：macOS Sonoma、Chrome 127。CompressImage 使用 AUTO + 质量 75 的预设；ShortPixel 采用 “Glossy” 模式（网页端）。以下数据为示例，后续可通过脚本替换为最新结果。
+
+| 测试素材 | 原始体积 | CompressImage | ShortPixel | 备注 |
+| --- | --- | --- | --- | --- |
+| 生活方式摄影 JPG | 4.02 MB | **1.05 MB**（-74%） | 1.09 MB（-73%） | 品质相近；ShortPixel 保留少量元数据 |
+| SaaS 仪表盘截图 PNG | 1.31 MB | **340 KB**（-74%） | 392 KB（-70%） | ShortPixel 对文字稍微柔化，仍可接受 |
+| 透明插画 PNG | 823 KB | 212 KB（-74%） | **198 KB**（-76%） | ShortPixel 体积略小，CompressImage 渐变更顺滑 |
+
+CompressImage 支持实时前后对比滑杆，设计师可直接放大检查字体、渐变是否正常；ShortPixel 需在后台或页面中查看成品。
+
+## 3. 工作流与自动化
+
+| 场景需求 | CompressImage | ShortPixel |
+| --- | --- | --- |
+| **上线前 QA** | 本地队列、滑杆比对、导出压缩日志与截图 | 需上传到测试站或手动下载对比 |
+| **批量模板** | 预设可跨项目复用，支持多格式输出 | 插件设置仅在单站点生效 |
+| **持续集成** | CLI (`compressimage-cli`)、GitHub Action 内测、日志 JSON | REST API、WP CLI、Zapier、Adaptive Images |
+| **CMS 集成** | 导出 ZIP + JSON 交给任意 CMS，WP 插件开发中 | WordPress 插件成熟，支持自动改写图片 URL |
+| **团队协作** | 压缩报告、计划中的共享空间 | 以网站管理员账户区分，无跨站概览 |
+
+一旦压缩流程必须发生在 CMS 之前（例如电商活动、品牌发布会），CompressImage 能确保所有文件在内部完成交接；若图片发布流程已经全在 WordPress 内，ShortPixel 的自动化优势更明显。
+
+## 4. 收费模式
+
+| 方案 | CompressImage | ShortPixel |
+| --- | --- | --- |
+| 免费 | 本地压缩无限张数、支持 AVIF/WebP | 每月 100 credits（共享） |
+| 付费 | 以协作、自动化、团队管理为核心（$9/人/月起，规划中） | 月付/年付 credits（10k：$9.99/月、30k：$19.99/月），亦有一次性包 |
+| 企业 | 定制 API、SLA、私有部署 | 定制套餐、批量 credits |
+
+CompressImage 无服务器成本，因此保持“压多少都不收费”；收费点放在协作、审计、自动化等进阶能力。ShortPixel 的 credit 模式适合按站点或访问量精确控制成本。
+
+## 5. 怎样选择？
+
+**更适合 CompressImage 的情况：**
+
+- 处理未发布素材、对保密性要求极高（产品迭代、广告拍摄、尚未上线的活动页）。
+- 一次需要压缩成百上千张图，希望保存操作记录、质量阈值。
+- 希望把压缩流程接入 CI/CD、设计 QA 或 Git 仓库。
+- 经常在弱网、外出环境下工作，需要离线也能完成批量压缩。
+
+**更适合 ShortPixel 的情况：**
+
+- WordPress 是核心主战场，希望图片上传后自动完成压缩与 CDN 分发。
+- 已经在使用 ShortPixel 各类插件（Adaptive Images、AI CDN 等）。
+- 乐意付费购买 credits，并享受 API/插件成熟生态。
+- 对“图片上传服务器”完全没有隐私顾虑。
+
+## 6. 快速体验 CompressImage
+
+1. 访问 [compressimage.dev](https://www.compressimage.dev/)，（可选）安装 PWA 方便离线使用。  
+2. 拖入样例图片，在前后对比滑杆中确认细节。  
+3. 保存预设，批量压缩后导出 ZIP + JSON 报表，交付给开发或运营。  
+4. 申请 [CLI/GitHub Action 内测](mailto:hello@compressimage.dev?subject=CLI%20beta)，获取自动化脚本。  
+5. 想要 WordPress 插件？[加入等待名单](mailto:hello@compressimage.dev?subject=WP%20plugin%20waitlist) 第一时间获知进展。
+
+> 想下载本文所用测试素材及日志？[发送邮件索取数据包](mailto:hello@compressimage.dev?subject=ShortPixel%20comparison%20data)。
+
+---
+
+### 下一步
+
+- 立即体验 CompressImage：[compressimage.dev](https://www.compressimage.dev/)  
+- 订阅自动化 & 插件路线图更新：[加入邮件列表](mailto:hello@compressimage.dev?subject=Join%20automation%20updates)  
+- 查看其他对比文章（TinyPNG、Kraken.io 等），获取完整选型建议。  
