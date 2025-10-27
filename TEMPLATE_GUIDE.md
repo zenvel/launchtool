@@ -75,7 +75,7 @@ export const siteConfig = {
   // 4. Social Links (optional)
   social: {
     twitter: "https://twitter.com/myawesometool",
-    github: "https://github.com/yourusername/myawesometool",
+    github: "https://github.com/zenvel/myawesometool",
   },
 
   // 5. Navigation - customize your menu
@@ -575,8 +575,8 @@ See [Migration to SaaS Guide](./docs/migration-to-saas.md) for:
 ## Getting Help
 
 - 📖 [Documentation](./docs)
-- 💬 [Community Discussions](https://github.com/yourusername/launchtool/discussions)
-- 🐛 [Report Issues](https://github.com/yourusername/launchtool/issues)
+- 💬 [Community Discussions](https://github.com/zenvel/launchtool/discussions)
+- 🐛 [Report Issues](https://github.com/zenvel/launchtool/issues)
 
 ---
 

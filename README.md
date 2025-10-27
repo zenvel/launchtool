@@ -8,7 +8,7 @@ Launch your next web tool in **minutes, not months**. LaunchTool is a production
 [![Next.js](https://img.shields.io/badge/Next.js-15-black)](https://nextjs.org/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5-blue)](https://www.typescriptlang.org/)
 
-[Demo](https://demo.launchtool.dev) · [Documentation](./docs) · [Report Bug](https://github.com/yourusername/launchtool/issues)
+[Demo](https://demo.launchtool.dev) · [Documentation](./docs) · [Report Bug](https://github.com/zenvel/launchtool/issues)
 
 ---
 
@@ -297,15 +297,15 @@ This project is licensed under the MIT License - see the [LICENSE](./LICENSE) fi
 ## 💬 Support
 
 - 📖 [Documentation](./docs)
-- 💬 [Discussions](https://github.com/yourusername/launchtool/discussions)
-- 🐛 [Issue Tracker](https://github.com/yourusername/launchtool/issues)
+- 💬 [Discussions](https://github.com/zenvel/launchtool/discussions)
+- 🐛 [Issue Tracker](https://github.com/zenvel/launchtool/issues)
 - 📧 Email: hello@launchtool.dev
 
 ---
 
 ## 🌟 Showcase
 
-Built something awesome with LaunchTool? [Add it to our showcase!](https://github.com/yourusername/launchtool/discussions/showcase)
+Built something awesome with LaunchTool? [Add it to our showcase!](https://github.com/zenvel/launchtool/discussions/showcase)
 
 ---
 

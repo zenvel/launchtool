@@ -206,8 +206,8 @@ pnpm dev -- -p 3001
 ## 💬 Get Help
 
 - 📖 [Full Documentation](./TEMPLATE_GUIDE.md)
-- 💬 [GitHub Discussions](https://github.com/yourusername/launchtool/discussions)
-- 🐛 [Report Issues](https://github.com/yourusername/launchtool/issues)
+- 💬 [GitHub Discussions](https://github.com/zenvel/launchtool/discussions)
+- 🐛 [Report Issues](https://github.com/zenvel/launchtool/issues)
 
 ---
 
